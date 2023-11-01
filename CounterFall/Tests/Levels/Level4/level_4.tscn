@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://d2hwjhgirm3di"]
+[gd_scene load_steps=10 format=3 uid="uid://v6g8srs6t2wk"]
 
-[ext_resource type="Script" path="res://Tests/Levels/Level3/CharacterBody3D.gd" id="1_621vm"]
-[ext_resource type="Script" path="res://Tests/Levels/Level3/SpringArmPivot.gd" id="2_s48jj"]
+[ext_resource type="Script" path="res://Tests/Levels/Level4/CharacterBody3D.gd" id="1_11l22"]
+[ext_resource type="Script" path="res://Tests/Levels/Level4/SpringArmPivot.gd" id="2_8ek41"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_busp2"]
 albedo_color = Color(0.384314, 0.541176, 0.227451, 1)
@@ -29,7 +29,7 @@ size = Vector3(0.2, 0.2, 0.2)
 radius = 0.25
 height = 1.0
 
-[node name="Level3" type="Node3D"]
+[node name="Level4" type="Node3D"]
 
 [node name="Platforms" type="Node3D" parent="."]
 
@@ -55,14 +55,17 @@ environment = SubResource("Environment_if04w")
 transform = Transform3D(0.926434, -0.219846, 0.305593, 0.116978, 0.939693, 0.321394, -0.357821, -0.262003, 0.896281, 0, 0, 0)
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
-script = ExtResource("1_621vm")
+script = ExtResource("1_11l22")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+[node name="Mesh" type="Node3D" parent="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-mesh = SubResource("CapsuleMesh_i16xl")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D/MeshInstance3D"]
-transform = Transform3D(-4.37114e-08, -4.37114e-08, 1, -1, 0, -4.37114e-08, 0, -1, -4.37114e-08, 0.0716932, 0.301455, -0.185635)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D/Mesh"]
+mesh = SubResource("CapsuleMesh_i16xl")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D/Mesh/MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.25, 0.25)
 mesh = SubResource("PrismMesh_j73c3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
@@ -70,7 +73,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("CapsuleShape3D_t046y")
 
 [node name="SpringArmPivot" type="Node3D" parent="CharacterBody3D"]
-script = ExtResource("2_s48jj")
+script = ExtResource("2_8ek41")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="CharacterBody3D/SpringArmPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
