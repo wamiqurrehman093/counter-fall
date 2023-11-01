@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dtp5x4pjynup1"]
+[gd_scene load_steps=8 format=3 uid="uid://dtp5x4pjynup1"]
+
+[ext_resource type="Script" path="res://Tests/Levels/Level1/CharacterBody3D.gd" id="1_pchg1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_busp2"]
 albedo_color = Color(0.384314, 0.541176, 0.227451, 1)
@@ -14,6 +16,14 @@ background_mode = 1
 background_color = Color(0.941176, 0.972549, 1, 1)
 ambient_light_color = Color(1, 1, 1, 1)
 tonemap_mode = 3
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_i16xl"]
+radius = 0.25
+height = 1.0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t046y"]
+radius = 0.25
+height = 1.0
 
 [node name="Level1" type="Node3D"]
 
@@ -39,3 +49,14 @@ environment = SubResource("Environment_if04w")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.926434, -0.219846, 0.305593, 0.116978, 0.939693, 0.321394, -0.357821, -0.262003, 0.896281, 0, 0, 0)
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+script = ExtResource("1_pchg1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("CapsuleMesh_i16xl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CapsuleShape3D_t046y")
