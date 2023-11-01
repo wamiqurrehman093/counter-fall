@@ -1,0 +1,147 @@
+[gd_scene load_steps=16 format=3 uid="uid://564fqfvcumhh"]
+
+[ext_resource type="Script" path="res://Tests/Levels/Level5/SpringArmPivot.gd" id="1_chs8n"]
+[ext_resource type="Script" path="res://Tests/Levels/Level5/CharacterBody3D.gd" id="1_dd06j"]
+[ext_resource type="Script" path="res://Tests/Levels/Level5/MovingPlatform2.gd" id="2_dgcuh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_busp2"]
+albedo_color = Color(0.384314, 0.541176, 0.227451, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wafsy"]
+size = Vector3(5, 1, 5)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_70ov8"]
+data = PackedVector3Array(-2.5, 0.5, 2.5, 2.5, 0.5, 2.5, -2.5, -0.5, 2.5, 2.5, 0.5, 2.5, 2.5, -0.5, 2.5, -2.5, -0.5, 2.5, 2.5, 0.5, -2.5, -2.5, 0.5, -2.5, 2.5, -0.5, -2.5, -2.5, 0.5, -2.5, -2.5, -0.5, -2.5, 2.5, -0.5, -2.5, 2.5, 0.5, 2.5, 2.5, 0.5, -2.5, 2.5, -0.5, 2.5, 2.5, 0.5, -2.5, 2.5, -0.5, -2.5, 2.5, -0.5, 2.5, -2.5, 0.5, -2.5, -2.5, 0.5, 2.5, -2.5, -0.5, -2.5, -2.5, 0.5, 2.5, -2.5, -0.5, 2.5, -2.5, -0.5, -2.5, 2.5, 0.5, 2.5, -2.5, 0.5, 2.5, 2.5, 0.5, -2.5, -2.5, 0.5, 2.5, -2.5, 0.5, -2.5, 2.5, 0.5, -2.5, -2.5, -0.5, 2.5, 2.5, -0.5, 2.5, -2.5, -0.5, -2.5, 2.5, -0.5, 2.5, 2.5, -0.5, -2.5, -2.5, -0.5, -2.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qgeq5"]
+size = Vector3(3, 1, 2)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_u67wj"]
+data = PackedVector3Array(-1.5, 0.5, 1, 1.5, 0.5, 1, -1.5, -0.5, 1, 1.5, 0.5, 1, 1.5, -0.5, 1, -1.5, -0.5, 1, 1.5, 0.5, -1, -1.5, 0.5, -1, 1.5, -0.5, -1, -1.5, 0.5, -1, -1.5, -0.5, -1, 1.5, -0.5, -1, 1.5, 0.5, 1, 1.5, 0.5, -1, 1.5, -0.5, 1, 1.5, 0.5, -1, 1.5, -0.5, -1, 1.5, -0.5, 1, -1.5, 0.5, -1, -1.5, 0.5, 1, -1.5, -0.5, -1, -1.5, 0.5, 1, -1.5, -0.5, 1, -1.5, -0.5, -1, 1.5, 0.5, 1, -1.5, 0.5, 1, 1.5, 0.5, -1, -1.5, 0.5, 1, -1.5, 0.5, -1, 1.5, 0.5, -1, -1.5, -0.5, 1, 1.5, -0.5, 1, -1.5, -0.5, -1, 1.5, -0.5, 1, 1.5, -0.5, -1, -1.5, -0.5, -1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8nmm2"]
+albedo_color = Color(0.470588, 0.329412, 0.113725, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mw1rk"]
+size = Vector3(5, 0.2, 0.2)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_gd3ap"]
+data = PackedVector3Array(-2.5, 0.1, 0.1, 2.5, 0.1, 0.1, -2.5, -0.1, 0.1, 2.5, 0.1, 0.1, 2.5, -0.1, 0.1, -2.5, -0.1, 0.1, 2.5, 0.1, -0.1, -2.5, 0.1, -0.1, 2.5, -0.1, -0.1, -2.5, 0.1, -0.1, -2.5, -0.1, -0.1, 2.5, -0.1, -0.1, 2.5, 0.1, 0.1, 2.5, 0.1, -0.1, 2.5, -0.1, 0.1, 2.5, 0.1, -0.1, 2.5, -0.1, -0.1, 2.5, -0.1, 0.1, -2.5, 0.1, -0.1, -2.5, 0.1, 0.1, -2.5, -0.1, -0.1, -2.5, 0.1, 0.1, -2.5, -0.1, 0.1, -2.5, -0.1, -0.1, 2.5, 0.1, 0.1, -2.5, 0.1, 0.1, 2.5, 0.1, -0.1, -2.5, 0.1, 0.1, -2.5, 0.1, -0.1, 2.5, 0.1, -0.1, -2.5, -0.1, 0.1, 2.5, -0.1, 0.1, -2.5, -0.1, -0.1, 2.5, -0.1, 0.1, 2.5, -0.1, -0.1, -2.5, -0.1, -0.1)
+
+[sub_resource type="Environment" id="Environment_if04w"]
+background_mode = 1
+background_color = Color(0.941176, 0.972549, 1, 1)
+ambient_light_color = Color(1, 1, 1, 1)
+tonemap_mode = 3
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_i16xl"]
+radius = 0.25
+height = 1.0
+
+[sub_resource type="PrismMesh" id="PrismMesh_j73c3"]
+size = Vector3(0.2, 0.2, 0.2)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t046y"]
+radius = 0.25
+height = 1.0
+
+[node name="Level5" type="Node3D"]
+
+[node name="Platforms" type="Node3D" parent="."]
+
+[node name="StaticPlatforms" type="Node3D" parent="Platforms"]
+
+[node name="StaticPlatform1" type="Node3D" parent="Platforms/StaticPlatforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Platforms/StaticPlatforms/StaticPlatform1"]
+material_override = SubResource("StandardMaterial3D_busp2")
+mesh = SubResource("BoxMesh_wafsy")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Platforms/StaticPlatforms/StaticPlatform1/Mesh"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/StaticPlatforms/StaticPlatform1/Mesh/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_70ov8")
+
+[node name="StaticPlatform2" type="Node3D" parent="Platforms/StaticPlatforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 5)
+
+[node name="Mesh" type="MeshInstance3D" parent="Platforms/StaticPlatforms/StaticPlatform2"]
+material_override = SubResource("StandardMaterial3D_busp2")
+mesh = SubResource("BoxMesh_wafsy")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Platforms/StaticPlatforms/StaticPlatform2/Mesh"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/StaticPlatforms/StaticPlatform2/Mesh/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_70ov8")
+
+[node name="MovingPlatforms" type="Node3D" parent="Platforms"]
+
+[node name="MovingPlatform1" type="AnimatableBody3D" parent="Platforms/MovingPlatforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -13.5)
+script = ExtResource("2_dgcuh")
+movement_velocity = Vector3(0, 0, 4)
+
+[node name="Mesh" type="MeshInstance3D" parent="Platforms/MovingPlatforms/MovingPlatform1"]
+material_override = SubResource("StandardMaterial3D_busp2")
+mesh = SubResource("BoxMesh_qgeq5")
+skeleton = NodePath("../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/MovingPlatforms/MovingPlatform1"]
+shape = SubResource("ConcavePolygonShape3D_u67wj")
+
+[node name="MovingPlatform2" type="AnimatableBody3D" parent="Platforms/MovingPlatforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.731078, 4.5)
+script = ExtResource("2_dgcuh")
+movement_velocity = Vector3(0, 0, 0)
+move_distance = 0.0
+rotation_velocity = Vector3(0, 100, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Platforms/MovingPlatforms/MovingPlatform2"]
+material_override = SubResource("StandardMaterial3D_8nmm2")
+mesh = SubResource("BoxMesh_mw1rk")
+skeleton = NodePath("../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/MovingPlatforms/MovingPlatform2"]
+shape = SubResource("ConcavePolygonShape3D_gd3ap")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.766044, -0.321394, 0.55667, 0, 0.866025, 0.5, -0.642788, -0.383022, 0.663414, 3.15706, 2.06699, 3.69695)
+current = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_if04w")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.926434, -0.219846, 0.305593, 0.116978, 0.939693, 0.321394, -0.357821, -0.262003, 0.896281, 0, 0, 0)
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+script = ExtResource("1_dd06j")
+
+[node name="Mesh" type="Node3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D/Mesh"]
+mesh = SubResource("CapsuleMesh_i16xl")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D/Mesh/MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.25, 0.25)
+mesh = SubResource("PrismMesh_j73c3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CapsuleShape3D_t046y")
+
+[node name="SpringArmPivot" type="Node3D" parent="CharacterBody3D"]
+script = ExtResource("1_chs8n")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CharacterBody3D/SpringArmPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+spring_length = 2.0
+margin = 0.2
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/SpringArmPivot/SpringArm3D"]
+current = true
