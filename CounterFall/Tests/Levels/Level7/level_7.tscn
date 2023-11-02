@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://8vv0sm6mol6w"]
+[gd_scene load_steps=23 format=3 uid="uid://8vv0sm6mol6w"]
 
 [ext_resource type="Script" path="res://Tests/Levels/Level7/MovingPlatform.gd" id="1_ofnub"]
 [ext_resource type="Script" path="res://Tests/Levels/Level7/CharacterBody3D.gd" id="2_mjt51"]
@@ -59,6 +59,9 @@ tonemap_mode = 3
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t046y"]
 radius = 0.25
 height = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pby7f"]
+size = Vector3(0.25, 0.1, 0.25)
 
 [node name="Level7" type="Node3D"]
 
@@ -177,6 +180,10 @@ transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("CapsuleShape3D_t046y")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0820642, 0)
+shape = SubResource("BoxShape3D_pby7f")
 
 [node name="SpringArmPivot" type="Node3D" parent="CharacterBody3D"]
 script = ExtResource("3_f1aoh")
