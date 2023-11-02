@@ -161,7 +161,8 @@ current = true
 environment = SubResource("Environment_if04w")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.926434, -0.219846, 0.305593, 0.116978, 0.939693, 0.321394, -0.357821, -0.262003, 0.896281, 0, 0, 0)
+transform = Transform3D(0.926434, -0.219847, 0.305593, -0.0124586, 0.793412, 0.608558, -0.376251, -0.567596, 0.732305, 0, 0, 0)
+light_energy = 0.5
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
 script = ExtResource("2_mjt51")
