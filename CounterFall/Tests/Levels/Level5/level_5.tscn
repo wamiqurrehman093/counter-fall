@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Tests/Levels/Level5/SpringArmPivot.gd" id="1_chs8n"]
 [ext_resource type="Script" path="res://Tests/Levels/Level5/CharacterBody3D.gd" id="1_dd06j"]
-[ext_resource type="Script" path="res://Tests/Levels/Level5/MovingPlatform2.gd" id="2_dgcuh"]
+[ext_resource type="Script" path="res://Tests/Levels/Level5/MovingPlatform.gd" id="2_dgcuh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_busp2"]
 albedo_color = Color(0.384314, 0.541176, 0.227451, 1)

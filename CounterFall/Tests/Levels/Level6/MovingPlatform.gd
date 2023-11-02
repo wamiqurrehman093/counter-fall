@@ -1,4 +1,4 @@
-extends Node3D
+extends AnimatableBody3D
 
 @export_group("Movement")
 @export var movement_velocity: Vector3 = Vector3(0, 0, 3)
@@ -28,7 +28,8 @@ func move_platform(delta):
 		position = current_location
 
 func rotate_platform(delta):
-	pass
+	if rotation_velocity != Vector3.ZERO:
+		rotation_degrees += rotation_velocity * delta
 
 func should_platform_return():
 	return get_distance_moved() > move_distance
