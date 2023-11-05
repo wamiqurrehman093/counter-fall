@@ -1,0 +1,80 @@
+[gd_scene load_steps=9 format=3 uid="uid://dqyh8stypsdf4"]
+
+[ext_resource type="PackedScene" uid="uid://hawaj326vhx7" path="res://Tests/Levels/Level9/Character.glb" id="1_v08sy"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_u33lu"]
+animation = &"Air"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pu8x7"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bjeux"]
+animation = &"Run"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_eej5q"]
+animation = &"Walk"
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_pman0"]
+input_0/name = "grounded"
+input_0/auto_advance = false
+input_0/reset = true
+input_1/name = "air"
+input_1/auto_advance = false
+input_1/reset = true
+
+[sub_resource type="AnimationNodeBlend3" id="AnimationNodeBlend3_yblbo"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_r625k"]
+graph_offset = Vector2(-604.964, 115.648)
+nodes/Air/node = SubResource("AnimationNodeAnimation_u33lu")
+nodes/Air/position = Vector2(-200, 320)
+nodes/Idle/node = SubResource("AnimationNodeAnimation_pu8x7")
+nodes/Idle/position = Vector2(-380, 120)
+nodes/Run/node = SubResource("AnimationNodeAnimation_bjeux")
+nodes/Run/position = Vector2(-380, 360)
+nodes/Walk/node = SubResource("AnimationNodeAnimation_eej5q")
+nodes/Walk/position = Vector2(-380, 240)
+nodes/ground_air_transition/node = SubResource("AnimationNodeTransition_pman0")
+nodes/ground_air_transition/position = Vector2(-20, 200)
+nodes/iwr_blend/node = SubResource("AnimationNodeBlend3_yblbo")
+nodes/iwr_blend/position = Vector2(-200, 120)
+node_connections = [&"output", 0, &"ground_air_transition", &"iwr_blend", 0, &"Idle", &"iwr_blend", 1, &"Walk", &"iwr_blend", 2, &"Run", &"ground_air_transition", 0, &"iwr_blend", &"ground_air_transition", 1, &"Air"]
+
+[node name="Character" instance=ExtResource("1_v08sy")]
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/1/position = Vector3(1.01195e-10, 0.15, 0.886054)
+bones/5/rotation = Quaternion(-0.352266, -0.110897, -0.290748, 0.882653)
+bones/6/rotation = Quaternion(0.312673, -0.00204644, -0.476279, 0.821821)
+bones/7/rotation = Quaternion(0.0207475, 0.109571, 0.00698375, 0.993738)
+bones/27/rotation = Quaternion(-0.39543, 0.072713, 0.291242, 0.868059)
+bones/28/rotation = Quaternion(0.229301, 0.00226232, 0.349283, 0.908525)
+bones/29/rotation = Quaternion(-0.0667482, -0.190973, -0.0254106, 0.978993)
+bones/45/rotation = Quaternion(0.730922, -0.068918, -0.669319, 0.114086)
+bones/46/rotation = Quaternion(-0.000127055, -1.55546e-07, -0.195323, 0.980739)
+bones/47/rotation = Quaternion(0.0298578, -0.0469516, 0.317888, 0.946494)
+bones/49/rotation = Quaternion(0.750227, -0.103432, 0.649804, -0.0649324)
+bones/50/rotation = Quaternion(-8.96248e-05, 1.60403e-07, 0.137885, 0.990448)
+bones/51/rotation = Quaternion(0.019455, 0.0751596, -0.491518, 0.8674)
+bones/53/position = Vector3(0.309073, 0.0286566, 1.00938)
+bones/53/rotation = Quaternion(0.159359, -0.267786, 0.938836, -0.146569)
+bones/54/position = Vector3(0.16179, -0.0167788, 0.0999278)
+bones/54/rotation = Quaternion(-0.635728, -0.307991, 0.63776, 0.307009)
+bones/55/position = Vector3(0.128684, 0.512928, 1.07784)
+bones/56/position = Vector3(0.104426, -0.346875, 0.512615)
+bones/56/rotation = Quaternion(0, 0, 1, 0)
+bones/57/position = Vector3(-0.309073, 0.148489, 0.927034)
+bones/57/rotation = Quaternion(-0.10749, -0.539523, 0.813657, 0.187945)
+bones/58/position = Vector3(-0.178265, 0.340502, 0.0931127)
+bones/58/rotation = Quaternion(0.635728, -0.307991, 0.63776, -0.307009)
+bones/59/position = Vector3(-0.139076, 0.530129, 1.04059)
+bones/60/rotation = Quaternion(0, 0, 1, 0)
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="2"]
+tree_root = SubResource("AnimationNodeBlendTree_r625k")
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/ground_air_transition/current_state = "grounded"
+parameters/ground_air_transition/transition_request = ""
+parameters/ground_air_transition/current_index = 0
+parameters/iwr_blend/blend_amount = -1.0
