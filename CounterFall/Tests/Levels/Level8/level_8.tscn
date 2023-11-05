@@ -189,8 +189,8 @@ script = ExtResource("4_kwuqi")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="CharacterBody3D/SpringArmPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-spring_length = 1.5
-margin = 0.05
+spring_length = 2.0
+margin = 0.5
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D/SpringArmPivot/SpringArm3D"]
 current = true
