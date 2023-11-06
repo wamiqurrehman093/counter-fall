@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://dqyh8stypsdf4"]
+[gd_scene load_steps=9 format=3 uid="uid://g0cyd6gmnkpi"]
 
-[ext_resource type="PackedScene" uid="uid://hawaj326vhx7" path="res://Tests/Levels/Level9/Character.glb" id="1_v08sy"]
+[ext_resource type="PackedScene" uid="uid://hawaj326vhx7" path="res://Tests/Levels/Level9/Character.glb" id="1_n5ofe"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_u33lu"]
 animation = &"Air"
@@ -40,7 +40,7 @@ nodes/iwr_blend/node = SubResource("AnimationNodeBlend3_yblbo")
 nodes/iwr_blend/position = Vector2(-200, 120)
 node_connections = [&"output", 0, &"ground_air_transition", &"ground_air_transition", 0, &"iwr_blend", &"ground_air_transition", 1, &"Air", &"iwr_blend", 0, &"Idle", &"iwr_blend", 1, &"Walk", &"iwr_blend", 2, &"Run"]
 
-[node name="Character" instance=ExtResource("1_v08sy")]
+[node name="Character" instance=ExtResource("1_n5ofe")]
 
 [node name="Skeleton3D" parent="Armature" index="0"]
 bones/1/position = Vector3(1.01195e-10, 0.15, 0.886054)
