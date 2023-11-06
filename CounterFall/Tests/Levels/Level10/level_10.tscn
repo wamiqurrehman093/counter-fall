@@ -197,6 +197,7 @@ shape = SubResource("ConcavePolygonShape3D_ssgks")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -13.5)
 script = ExtResource("1_4vhex")
 movement_velocity = Vector3(0, 0, 4)
+move_distance = 10.0
 
 [node name="Mesh" type="MeshInstance3D" parent="Platforms/MovingPlatforms/MovingPlatform1"]
 material_override = SubResource("StandardMaterial3D_busp2")
@@ -289,19 +290,19 @@ run_speed = 10.0
 [node name="Mesh" parent="CharacterBody3D" instance=ExtResource("4_r06ub")]
 
 [node name="Skeleton3D" parent="CharacterBody3D/Mesh/Armature" index="0"]
-bones/1/position = Vector3(-1.87851e-11, 0.15, 0.879638)
-bones/5/rotation = Quaternion(-0.355113, -0.108291, -0.283516, 0.884187)
-bones/6/rotation = Quaternion(0.320873, -0.00202014, -0.488769, 0.811259)
-bones/7/rotation = Quaternion(0.0128317, 0.107391, 0.0137721, 0.994039)
-bones/27/rotation = Quaternion(-0.401647, 0.0659474, 0.28021, 0.869375)
-bones/28/rotation = Quaternion(0.242754, 0.00223324, 0.369776, 0.896845)
-bones/29/rotation = Quaternion(-0.0764441, -0.18901, -0.0330673, 0.978437)
-bones/45/rotation = Quaternion(0.729281, -0.0827423, -0.667171, 0.127225)
-bones/46/rotation = Quaternion(-0.000150233, -1.59897e-07, -0.23096, 0.972963)
-bones/47/rotation = Quaternion(0.0310363, -0.0462034, 0.333841, 0.940985)
-bones/49/rotation = Quaternion(0.752172, -0.0861525, 0.651432, -0.0495104)
-bones/50/rotation = Quaternion(-0.000120748, 1.50336e-07, 0.185769, 0.982593)
-bones/51/rotation = Quaternion(0.0216822, 0.0743094, -0.512465, 0.855212)
+bones/1/position = Vector3(1.87797e-10, 0.15, 0.883716)
+bones/5/rotation = Quaternion(-0.353327, -0.109928, -0.288105, 0.883217)
+bones/6/rotation = Quaternion(0.315646, -0.00203703, -0.480808, 0.818038)
+bones/7/rotation = Quaternion(0.017867, 0.108795, 0.00945961, 0.993859)
+bones/27/rotation = Quaternion(-0.397747, 0.0702093, 0.287192, 0.868556)
+bones/28/rotation = Quaternion(0.234182, 0.002252, 0.356718, 0.904382)
+bones/29/rotation = Quaternion(-0.0703173, -0.190272, -0.0282444, 0.978803)
+bones/45/rotation = Quaternion(0.730341, -0.0741057, -0.668541, 0.119008)
+bones/46/rotation = Quaternion(-0.000135639, -1.55395e-07, -0.208521, 0.978018)
+bones/47/rotation = Quaternion(0.0302945, -0.0466786, 0.323896, 0.944455)
+bones/49/rotation = Quaternion(0.751049, -0.0966296, 0.650477, -0.0588805)
+bones/50/rotation = Quaternion(-0.000101639, 1.60442e-07, 0.15637, 0.987699)
+bones/51/rotation = Quaternion(0.0203149, 0.0748475, -0.499739, 0.862697)
 bones/53/position = Vector3(0.309073, 0.0286566, 1.00938)
 bones/53/rotation = Quaternion(0.159359, -0.267786, 0.938836, -0.146569)
 bones/54/position = Vector3(0.16179, -0.0167788, 0.0999278)
@@ -332,5 +333,22 @@ margin = 0.5
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D/SpringArmPivot/SpringArm3D"]
 current = true
+
+[node name="Weapons" type="Node3D" parent="CharacterBody3D"]
+
+[node name="Knife" type="Node3D" parent="CharacterBody3D/Weapons"]
+visible = false
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="CharacterBody3D/Weapons/Knife"]
+transform = Transform3D(-0.936056, 0.149755, -0.318391, -0.310637, -0.776703, 0.547939, -0.165238, 0.611805, 0.773557, -0.339495, 0.826131, 0.0442141)
+bone_name = "Middle1.R"
+bone_idx = 33
+use_external_skeleton = true
+external_skeleton = NodePath("../../../Mesh/Armature/Skeleton3D")
+
+[node name="Mesh" type="MeshInstance3D" parent="CharacterBody3D/Weapons/Knife/BoneAttachment3D"]
+transform = Transform3D(0.141506, -0.0467503, 0.0170438, 0.039774, 0.0753921, -0.123426, 0.0299017, 0.120956, 0.0835191, -0.0646577, 0.0405265, 0.111417)
+mesh = SubResource("ArrayMesh_bon84")
+skeleton = NodePath("")
 
 [editable path="CharacterBody3D/Mesh"]

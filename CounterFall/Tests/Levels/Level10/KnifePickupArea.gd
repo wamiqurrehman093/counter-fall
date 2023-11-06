@@ -12,5 +12,5 @@ func _process(delta):
 
 func _on_body_entered(body: Node3D):
 	if body.is_in_group("player"):
-		print("You picked up the knife!")
+		body.get_node("Weapons/Knife").show()
 		queue_free()
