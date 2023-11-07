@@ -1,10 +1,10 @@
 [gd_scene load_steps=30 format=3 uid="uid://dlcydlmdevmdx"]
 
-[ext_resource type="Script" path="res://Tests/Levels/Level10/MovingObject.gd" id="1_4vhex"]
-[ext_resource type="Script" path="res://Tests/Levels/Level10/KnifePickupArea.gd" id="2_31dh2"]
-[ext_resource type="Script" path="res://Tests/Levels/Level10/CharacterBody3D.gd" id="2_atogs"]
-[ext_resource type="Script" path="res://Tests/Levels/Level10/SpringArmPivot.gd" id="4_fygcp"]
-[ext_resource type="PackedScene" uid="uid://g0cyd6gmnkpi" path="res://Tests/Levels/Level10/character.tscn" id="4_r06ub"]
+[ext_resource type="Script" path="res://Tests/Levels/Level11/MovingObject.gd" id="2_5ocse"]
+[ext_resource type="Script" path="res://Tests/Levels/Level11/KnifePickupArea.gd" id="3_m1e7r"]
+[ext_resource type="Script" path="res://Tests/Levels/Level11/CharacterBody3D.gd" id="3_whl14"]
+[ext_resource type="PackedScene" uid="uid://bpt0rmao0qbxb" path="res://Tests/Levels/Level11/character.tscn" id="4_h70hv"]
+[ext_resource type="Script" path="res://Tests/Levels/Level11/SpringArmPivot.gd" id="5_sgno4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_busp2"]
 albedo_color = Color(0.384314, 0.541176, 0.227451, 1)
@@ -157,7 +157,7 @@ height = 1.0
 [sub_resource type="BoxShape3D" id="BoxShape3D_pby7f"]
 size = Vector3(0.25, 0.1, 0.25)
 
-[node name="Level10" type="Node3D"]
+[node name="Level11" type="Node3D"]
 
 [node name="Platforms" type="Node3D" parent="."]
 
@@ -195,7 +195,7 @@ shape = SubResource("ConcavePolygonShape3D_ssgks")
 
 [node name="MovingPlatform1" type="AnimatableBody3D" parent="Platforms/MovingPlatforms"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -13.5)
-script = ExtResource("1_4vhex")
+script = ExtResource("2_5ocse")
 movement_velocity = Vector3(0, 0, 4)
 move_distance = 10.0
 
@@ -214,7 +214,7 @@ shape = SubResource("ConcavePolygonShape3D_u67wj")
 
 [node name="MovingPlatform3" type="AnimatableBody3D" parent="Platforms/MovingPlatforms"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5, 5)
-script = ExtResource("1_4vhex")
+script = ExtResource("2_5ocse")
 movement_velocity = Vector3(0, 2, 0)
 move_distance = 5.0
 
@@ -235,12 +235,12 @@ shape = SubResource("ConcavePolygonShape3D_1rb3y")
 
 [node name="KnifePickup" type="AnimatableBody3D" parent="Platforms/MovingPlatforms/MovingPlatform3/Pickups"]
 sync_to_physics = false
-script = ExtResource("1_4vhex")
+script = ExtResource("2_5ocse")
 rotation_velocity = Vector3(0, 180, 0)
 
 [node name="Area" type="Area3D" parent="Platforms/MovingPlatforms/MovingPlatform3/Pickups/KnifePickup"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 0)
-script = ExtResource("2_31dh2")
+script = ExtResource("3_m1e7r")
 
 [node name="Mesh" type="MeshInstance3D" parent="Platforms/MovingPlatforms/MovingPlatform3/Pickups/KnifePickup/Area"]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
@@ -255,7 +255,7 @@ shape = SubResource("BoxShape3D_qn65p")
 
 [node name="MovingPlatform2" type="AnimatableBody3D" parent="Platforms/MovingPlatforms"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.73108, 10.5)
-script = ExtResource("1_4vhex")
+script = ExtResource("2_5ocse")
 rotation_velocity = Vector3(0, 100, 0)
 
 [node name="Mesh" type="MeshInstance3D" parent="Platforms/MovingPlatforms/MovingPlatform2"]
@@ -283,37 +283,29 @@ transform = Transform3D(0.926434, -0.219847, 0.305593, -0.0124586, 0.793412, 0.6
 light_energy = 0.5
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." groups=["player"]]
-script = ExtResource("2_atogs")
+script = ExtResource("3_whl14")
 walk_speed = 4.0
 run_speed = 10.0
 
-[node name="Mesh" parent="CharacterBody3D" instance=ExtResource("4_r06ub")]
+[node name="Mesh" parent="CharacterBody3D" instance=ExtResource("4_h70hv")]
 
 [node name="Skeleton3D" parent="CharacterBody3D/Mesh/Armature" index="0"]
-bones/1/position = Vector3(2.75476e-10, 0.15, 0.881349)
-bones/5/rotation = Quaternion(-0.35436, -0.108982, -0.285477, 0.883773)
-bones/6/rotation = Quaternion(0.31855, -0.0020277, -0.485231, 0.814293)
-bones/7/rotation = Quaternion(0.0150353, 0.108014, 0.0118876, 0.993965)
-bones/27/rotation = Quaternion(-0.399968, 0.0677901, 0.283244, 0.869024)
-bones/28/rotation = Quaternion(0.238896, 0.00224178, 0.363898, 0.900279)
-bones/29/rotation = Quaternion(-0.0737912, -0.189566, -0.0309865, 0.978601)
-bones/45/rotation = Quaternion(0.729757, -0.078978, -0.66778, 0.123639)
-bones/46/rotation = Quaternion(-0.000143791, -1.56089e-07, -0.221057, 0.975261)
-bones/47/rotation = Quaternion(0.0307123, -0.0464127, 0.329542, 0.942499)
-bones/49/rotation = Quaternion(0.751718, -0.0905915, 0.651039, -0.0534888)
-bones/50/rotation = Quaternion(-0.000112329, 1.62899e-07, 0.172809, 0.984955)
-bones/51/rotation = Quaternion(0.0210964, 0.0745465, -0.507069, 0.858416)
-bones/53/position = Vector3(0.309073, 0.0286566, 1.00938)
-bones/53/rotation = Quaternion(0.159359, -0.267786, 0.938836, -0.146569)
-bones/54/position = Vector3(0.16179, -0.0167788, 0.0999278)
-bones/54/rotation = Quaternion(-0.635728, -0.307991, 0.63776, 0.307009)
-bones/55/position = Vector3(0.128684, 0.512928, 1.07784)
-bones/56/position = Vector3(0.104426, -0.346875, 0.512615)
-bones/57/position = Vector3(-0.309073, 0.148489, 0.927034)
-bones/57/rotation = Quaternion(-0.10749, -0.539523, 0.813657, 0.187945)
-bones/58/position = Vector3(-0.178265, 0.340502, 0.0931127)
-bones/58/rotation = Quaternion(0.635728, -0.307991, 0.63776, -0.307009)
-bones/59/position = Vector3(-0.139076, 0.530129, 1.04059)
+bones/1/position = Vector3(3.28731e-10, 0.15, 0.879911)
+bones/5/rotation = Quaternion(-0.355004, -0.108392, -0.283805, 0.884126)
+bones/6/rotation = Quaternion(0.320419, -0.00202163, -0.488078, 0.811854)
+bones/7/rotation = Quaternion(0.0132107, 0.107499, 0.0134484, 0.994026)
+bones/27/rotation = Quaternion(-0.401359, 0.0662649, 0.280734, 0.869315)
+bones/28/rotation = Quaternion(0.241915, 0.00223514, 0.368498, 0.897598)
+bones/29/rotation = Quaternion(-0.075989, -0.189107, -0.032711, 0.978465)
+bones/45/rotation = Quaternion(0.729374, -0.0820191, -0.667289, 0.126536)
+bones/46/rotation = Quaternion(-0.000148847, -1.60976e-07, -0.22883, 0.973467)
+bones/47/rotation = Quaternion(0.0309761, -0.0462426, 0.333047, 0.941266)
+bones/49/rotation = Quaternion(0.752091, -0.0869641, 0.651362, -0.0502388)
+bones/50/rotation = Quaternion(-0.000118742, 1.58028e-07, 0.182684, 0.983172)
+bones/51/rotation = Quaternion(0.0215742, 0.0743539, -0.511476, 0.855803)
+
+[node name="AnimationTree" parent="CharacterBody3D/Mesh" index="2"]
+parameters/light_punch_blend/blend_amount = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -324,7 +316,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0820642, 0)
 shape = SubResource("BoxShape3D_pby7f")
 
 [node name="SpringArmPivot" type="Node3D" parent="CharacterBody3D"]
-script = ExtResource("4_fygcp")
+script = ExtResource("5_sgno4")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="CharacterBody3D/SpringArmPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -340,7 +332,7 @@ current = true
 visible = false
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="CharacterBody3D/Weapons/Knife"]
-transform = Transform3D(-0.936055, 0.149759, -0.318391, -0.310641, -0.776698, 0.547943, -0.165234, 0.61181, 0.773554, -0.339494, 0.826116, 0.0442219)
+transform = Transform3D(-0.936059, 0.149818, -0.318352, -0.310697, -0.776568, 0.548096, -0.165108, 0.611961, 0.773461, -0.339476, 0.826226, 0.0443027)
 bone_name = "Middle1.R"
 bone_idx = 33
 use_external_skeleton = true

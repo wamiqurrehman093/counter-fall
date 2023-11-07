@@ -1,0 +1,124 @@
+[gd_scene load_steps=15 format=3 uid="uid://bpt0rmao0qbxb"]
+
+[ext_resource type="PackedScene" uid="uid://buvnpl18gyf2p" path="res://Tests/Levels/Level11/Character.glb" id="1_4tixm"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_u33lu"]
+animation = &"Air"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pu8x7"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bjeux"]
+animation = &"Walk"
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_3uvrf"]
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_p424g"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_eej5q"]
+animation = &"Walk"
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_pman0"]
+input_0/name = "grounded"
+input_0/auto_advance = false
+input_0/reset = true
+input_1/name = "air"
+input_1/auto_advance = false
+input_1/reset = true
+
+[sub_resource type="AnimationNodeBlend3" id="AnimationNodeBlend3_yblbo"]
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_svx6l"]
+filter_enabled = true
+filters = ["Armature/Skeleton3D:Index1.R", "Armature/Skeleton3D:Index2.R", "Armature/Skeleton3D:Index3.R", "Armature/Skeleton3D:LowerArm.R", "Armature/Skeleton3D:Middle1.R", "Armature/Skeleton3D:Middle2.R", "Armature/Skeleton3D:Middle3.R", "Armature/Skeleton3D:Pinky1.R", "Armature/Skeleton3D:Pinky2.R", "Armature/Skeleton3D:Pinky3.R", "Armature/Skeleton3D:Ring1.R", "Armature/Skeleton3D:Ring2.R", "Armature/Skeleton3D:Ring3.R", "Armature/Skeleton3D:Thumb1.R", "Armature/Skeleton3D:Thumb2.R", "Armature/Skeleton3D:Thumb3.R", "Armature/Skeleton3D:UpperArm.R", "Armature/Skeleton3D:Wrist.R"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0cwj8"]
+animation = &"Punch1"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_ln6cm"]
+filter_enabled = true
+filters = ["Armature/Skeleton3D:Index1.R", "Armature/Skeleton3D:Index2.R", "Armature/Skeleton3D:Index3.R", "Armature/Skeleton3D:LowerArm.R", "Armature/Skeleton3D:Middle1.R", "Armature/Skeleton3D:Middle2.R", "Armature/Skeleton3D:Middle3.R", "Armature/Skeleton3D:Pinky1.R", "Armature/Skeleton3D:Pinky2.R", "Armature/Skeleton3D:Pinky3.R", "Armature/Skeleton3D:Ring1.R", "Armature/Skeleton3D:Ring2.R", "Armature/Skeleton3D:Ring3.R", "Armature/Skeleton3D:Thumb1.R", "Armature/Skeleton3D:Thumb2.R", "Armature/Skeleton3D:Thumb3.R", "Armature/Skeleton3D:UpperArm.R", "Armature/Skeleton3D:Wrist.R"]
+
+[sub_resource type="AnimationNodeTimeSeek" id="AnimationNodeTimeSeek_spr0e"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_cjj5t"]
+graph_offset = Vector2(-254.45, 228.724)
+nodes/Air/node = SubResource("AnimationNodeAnimation_u33lu")
+nodes/Air/position = Vector2(-200, 320)
+nodes/Idle/node = SubResource("AnimationNodeAnimation_pu8x7")
+nodes/Idle/position = Vector2(-380, 120)
+nodes/Run/node = SubResource("AnimationNodeAnimation_bjeux")
+nodes/Run/position = Vector2(-600, 360)
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_p424g")
+nodes/TimeScale/position = Vector2(-400, 360)
+"nodes/TimeScale 2/node" = SubResource("AnimationNodeTimeScale_3uvrf")
+"nodes/TimeScale 2/position" = Vector2(-60, 480)
+nodes/Walk/node = SubResource("AnimationNodeAnimation_eej5q")
+nodes/Walk/position = Vector2(-380, 240)
+nodes/ground_air_transition/node = SubResource("AnimationNodeTransition_pman0")
+nodes/ground_air_transition/position = Vector2(-20, 200)
+nodes/iwr_blend/node = SubResource("AnimationNodeBlend3_yblbo")
+nodes/iwr_blend/position = Vector2(-200, 120)
+nodes/light_punch/node = SubResource("AnimationNodeOneShot_svx6l")
+nodes/light_punch/position = Vector2(240, 180)
+nodes/light_punch_animation/node = SubResource("AnimationNodeAnimation_0cwj8")
+nodes/light_punch_animation/position = Vector2(-340, 500)
+nodes/light_punch_blend/node = SubResource("AnimationNodeBlend2_ln6cm")
+nodes/light_punch_blend/position = Vector2(460, 360)
+nodes/light_punch_seek/node = SubResource("AnimationNodeTimeSeek_spr0e")
+nodes/light_punch_seek/position = Vector2(-520, 620)
+nodes/output/position = Vector2(460, 180)
+node_connections = [&"output", 0, &"light_punch", &"ground_air_transition", 0, &"iwr_blend", &"ground_air_transition", 1, &"Air", &"iwr_blend", 0, &"Idle", &"iwr_blend", 1, &"Walk", &"iwr_blend", 2, &"TimeScale", &"TimeScale", 0, &"Run", &"TimeScale 2", 0, &"light_punch_animation", &"light_punch", 0, &"ground_air_transition", &"light_punch", 1, &"TimeScale 2"]
+
+[node name="Character" instance=ExtResource("1_4tixm")]
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/1/position = Vector3(-1.31048e-10, 0.15, 0.882669)
+bones/5/rotation = Quaternion(-0.353799, -0.109497, -0.286914, 0.883469)
+bones/6/rotation = Quaternion(0.316968, -0.00203281, -0.482822, 0.81634)
+bones/7/rotation = Quaternion(0.0165832, 0.108444, 0.0105614, 0.993908)
+bones/27/rotation = Quaternion(-0.398757, 0.0691113, 0.285404, 0.86877)
+bones/28/rotation = Quaternion(0.236341, 0.00224738, 0.360007, 0.902515)
+bones/29/rotation = Quaternion(-0.0719061, -0.189953, -0.029501, 0.978712)
+bones/30/rotation = Quaternion(0.0992187, -0.0263339, 0.215069, 0.971189)
+bones/31/rotation = Quaternion(-0.0434176, 0.00125973, 0.156077, 0.986789)
+bones/37/rotation = Quaternion(0.00629944, -0.00241956, 0.0929294, 0.99565)
+bones/38/rotation = Quaternion(-0.0400974, 0.00212167, 0.14632, 0.988422)
+bones/39/rotation = Quaternion(0.0590127, -0.034298, 0.204466, 0.976491)
+bones/40/rotation = Quaternion(-0.00572749, -0.00179919, 0.103083, 0.994655)
+bones/41/rotation = Quaternion(-0.0482141, -0.00755032, 0.272844, 0.96082)
+bones/45/rotation = Quaternion(0.730077, -0.0763451, -0.668195, 0.121135)
+bones/46/rotation = Quaternion(-0.000139368, -1.55498e-07, -0.214257, 0.976777)
+bones/47/rotation = Quaternion(0.0304858, -0.0465574, 0.326489, 0.943561)
+bones/49/rotation = Quaternion(0.751367, -0.0938256, 0.650743, -0.0563788)
+bones/50/rotation = Quaternion(-0.000106591, 1.65116e-07, 0.163988, 0.986462)
+bones/51/rotation = Quaternion(0.0206757, 0.0747105, -0.503138, 0.860723)
+bones/53/position = Vector3(0.309073, 0.0286566, 1.00938)
+bones/53/rotation = Quaternion(0.159359, -0.267786, 0.938836, -0.146569)
+bones/54/position = Vector3(0.16179, -0.0167788, 0.0999278)
+bones/54/rotation = Quaternion(-0.635728, -0.307991, 0.63776, 0.307009)
+bones/55/position = Vector3(0.128684, 0.512928, 1.07784)
+bones/56/position = Vector3(0.104426, -0.346875, 0.512615)
+bones/56/rotation = Quaternion(0, 0, 1, 0)
+bones/57/position = Vector3(-0.309073, 0.148489, 0.927034)
+bones/57/rotation = Quaternion(-0.10749, -0.539523, 0.813657, 0.187945)
+bones/58/position = Vector3(-0.178265, 0.340502, 0.0931127)
+bones/58/rotation = Quaternion(0.635728, -0.307991, 0.63776, -0.307009)
+bones/59/position = Vector3(-0.139076, 0.530129, 1.04059)
+bones/60/rotation = Quaternion(0, 0, 1, 0)
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="2"]
+tree_root = SubResource("AnimationNodeBlendTree_cjj5t")
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/TimeScale/scale = 2.0
+"parameters/TimeScale 2/scale" = 3.0
+parameters/ground_air_transition/current_state = "grounded"
+parameters/ground_air_transition/transition_request = ""
+parameters/ground_air_transition/current_index = 0
+parameters/iwr_blend/blend_amount = -1.0
+parameters/light_punch/active = false
+parameters/light_punch/internal_active = false
+parameters/light_punch/request = 0
+parameters/light_punch_blend/blend_amount = 1.0
+parameters/light_punch_seek/seek_request = -1.0
