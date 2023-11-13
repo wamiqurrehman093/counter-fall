@@ -68,7 +68,7 @@ nodes/light_punch_blend/position = Vector2(460, 360)
 nodes/light_punch_seek/node = SubResource("AnimationNodeTimeSeek_spr0e")
 nodes/light_punch_seek/position = Vector2(-520, 620)
 nodes/output/position = Vector2(460, 180)
-node_connections = [&"output", 0, &"light_punch", &"ground_air_transition", 0, &"iwr_blend", &"ground_air_transition", 1, &"Air", &"iwr_blend", 0, &"Idle", &"iwr_blend", 1, &"Walk", &"iwr_blend", 2, &"TimeScale", &"TimeScale", 0, &"Run", &"TimeScale 2", 0, &"light_punch_animation", &"light_punch", 0, &"ground_air_transition", &"light_punch", 1, &"TimeScale 2"]
+node_connections = [&"output", 0, &"light_punch", &"TimeScale", 0, &"Run", &"TimeScale 2", 0, &"light_punch_animation", &"ground_air_transition", 0, &"iwr_blend", &"ground_air_transition", 1, &"Air", &"iwr_blend", 0, &"Idle", &"iwr_blend", 1, &"Walk", &"iwr_blend", 2, &"TimeScale", &"light_punch", 0, &"ground_air_transition", &"light_punch", 1, &"TimeScale 2"]
 
 [node name="Character" instance=ExtResource("1_4tixm")]
 
