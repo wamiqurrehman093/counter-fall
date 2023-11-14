@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://gab3psw8bj4k"]
+[gd_scene load_steps=10 format=3 uid="uid://gab3psw8bj4k"]
 
 [ext_resource type="Script" path="res://Source/Main/main.gd" id="1_f1jb8"]
 [ext_resource type="Texture2D" uid="uid://b4etycoeh4lrl" path="res://Assets/Graphics/Icons/Knives/Knife_Base.png" id="2_tibl3"]
+[ext_resource type="PackedScene" uid="uid://klvwn3o5y5jb" path="res://Source/UserInterface/Buttons/large_icon_button.tscn" id="2_twiqn"]
 [ext_resource type="Texture2D" uid="uid://btxek65vsf6oj" path="res://Assets/Graphics/Icons/Pistols/Pisto_Base.png" id="3_gh2pf"]
 [ext_resource type="Texture2D" uid="uid://dry5w3shk5p41" path="res://Assets/Graphics/Icons/Rifles/Rifle_Base.png" id="4_tfn4c"]
 [ext_resource type="Texture2D" uid="uid://bki45ijkbrli" path="res://Assets/Graphics/Icons/Grenade/Grenade_Base.png" id="5_pxhq0"]
@@ -153,12 +154,9 @@ layout_mode = 2
 custom_minimum_size = Vector2(176, 176)
 layout_mode = 2
 
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer/HBoxContainer/Window/Loadout/VBoxContainer/CenterContainer/Container/VBoxContainer2"]
-custom_minimum_size = Vector2(176, 176)
+[node name="LargeIconButton" parent="CanvasLayer/HBoxContainer/Window/Loadout/VBoxContainer/CenterContainer/Container/VBoxContainer2" instance=ExtResource("2_twiqn")]
 layout_mode = 2
 texture_normal = ExtResource("2_tibl3")
-ignore_texture_size = true
-stretch_mode = 5
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/Window/Loadout/VBoxContainer/CenterContainer/Container"]
 custom_minimum_size = Vector2(176, 176)
@@ -168,33 +166,21 @@ layout_mode = 2
 custom_minimum_size = Vector2(176, 176)
 layout_mode = 2
 
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer/HBoxContainer/Window/Loadout/VBoxContainer/CenterContainer/Container/VBoxContainer4"]
-custom_minimum_size = Vector2(176, 176)
+[node name="LargeIconButton" parent="CanvasLayer/HBoxContainer/Window/Loadout/VBoxContainer/CenterContainer/Container/VBoxContainer4" instance=ExtResource("2_twiqn")]
 layout_mode = 2
 texture_normal = ExtResource("3_gh2pf")
-ignore_texture_size = true
-stretch_mode = 5
 
 [node name="VBoxContainer5" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/Window/Loadout/VBoxContainer/CenterContainer/Container"]
 custom_minimum_size = Vector2(176, 176)
 layout_mode = 2
 
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer/HBoxContainer/Window/Loadout/VBoxContainer/CenterContainer/Container/VBoxContainer5"]
-custom_minimum_size = Vector2(176, 176)
-layout_mode = 2
-ignore_texture_size = true
-stretch_mode = 5
-
 [node name="VBoxContainer6" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/Window/Loadout/VBoxContainer/CenterContainer/Container"]
 custom_minimum_size = Vector2(176, 176)
 layout_mode = 2
 
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer/HBoxContainer/Window/Loadout/VBoxContainer/CenterContainer/Container/VBoxContainer6"]
-custom_minimum_size = Vector2(176, 176)
+[node name="LargeIconButton" parent="CanvasLayer/HBoxContainer/Window/Loadout/VBoxContainer/CenterContainer/Container/VBoxContainer6" instance=ExtResource("2_twiqn")]
 layout_mode = 2
 texture_normal = ExtResource("4_tfn4c")
-ignore_texture_size = true
-stretch_mode = 5
 
 [node name="VBoxContainer7" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/Window/Loadout/VBoxContainer/CenterContainer/Container"]
 custom_minimum_size = Vector2(176, 176)
@@ -204,12 +190,9 @@ layout_mode = 2
 custom_minimum_size = Vector2(176, 176)
 layout_mode = 2
 
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer/HBoxContainer/Window/Loadout/VBoxContainer/CenterContainer/Container/VBoxContainer8"]
-custom_minimum_size = Vector2(176, 176)
+[node name="LargeIconButton" parent="CanvasLayer/HBoxContainer/Window/Loadout/VBoxContainer/CenterContainer/Container/VBoxContainer8" instance=ExtResource("2_twiqn")]
 layout_mode = 2
 texture_normal = ExtResource("5_pxhq0")
-ignore_texture_size = true
-stretch_mode = 5
 
 [node name="VBoxContainer9" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/Window/Loadout/VBoxContainer/CenterContainer/Container"]
 custom_minimum_size = Vector2(176, 176)

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://klvwn3o5y5jb"]
+
+[ext_resource type="PackedScene" uid="uid://sqc8of3ryr47" path="res://Source/UserInterface/Buttons/GraphicsButton.tscn" id="1_lfwdv"]
+
+[node name="LargeIconButton" instance=ExtResource("1_lfwdv")]
+custom_minimum_size = Vector2(176, 176)
