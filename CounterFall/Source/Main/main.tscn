@@ -9,8 +9,8 @@ background_color = Color(0.941176, 0.972549, 1, 1)
 ambient_light_color = Color(1, 1, 1, 1)
 tonemap_mode = 3
 
-[sub_resource type="LabelSettings" id="LabelSettings_e7kqa"]
-font_size = 72
+[sub_resource type="LabelSettings" id="LabelSettings_wn8xc"]
+font_size = 42
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_f1jb8")
@@ -36,70 +36,102 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Menu" type="ColorRect" parent="CanvasLayer/HBoxContainer"]
-custom_minimum_size = Vector2(420, 0)
+custom_minimum_size = Vector2(320, 0)
 layout_mode = 2
 color = Color(0.392157, 0.392157, 0.392157, 0.392157)
 
-[node name="Container" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/Menu"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/HBoxContainer/Menu"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_top = 8
 
-[node name="Heading" type="Label" parent="CanvasLayer/HBoxContainer/Menu/Container"]
-layout_mode = 2
-text = "COUNTER
-FALL"
-label_settings = SubResource("LabelSettings_e7kqa")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Options" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/Menu/Container"]
+[node name="Container" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/Menu/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="Play" type="Button" parent="CanvasLayer/HBoxContainer/Menu/Container/Options"]
-custom_minimum_size = Vector2(384, 64)
+[node name="Heading" type="Label" parent="CanvasLayer/HBoxContainer/Menu/MarginContainer/Container"]
+layout_mode = 2
+text = "COUNTER FALL"
+label_settings = SubResource("LabelSettings_wn8xc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Options" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/Menu/MarginContainer/Container"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Play" type="Button" parent="CanvasLayer/HBoxContainer/Menu/MarginContainer/Container/Options"]
+custom_minimum_size = Vector2(256, 48)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 20
 text = "PLAY"
 
-[node name="Loadout" type="Button" parent="CanvasLayer/HBoxContainer/Menu/Container/Options"]
-custom_minimum_size = Vector2(384, 64)
+[node name="Loadout" type="Button" parent="CanvasLayer/HBoxContainer/Menu/MarginContainer/Container/Options"]
+custom_minimum_size = Vector2(256, 48)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 20
 text = "LOADOUT"
 
-[node name="Inventory" type="Button" parent="CanvasLayer/HBoxContainer/Menu/Container/Options"]
-custom_minimum_size = Vector2(384, 64)
+[node name="Inventory" type="Button" parent="CanvasLayer/HBoxContainer/Menu/MarginContainer/Container/Options"]
+custom_minimum_size = Vector2(256, 48)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 20
 text = "INVENTORY"
 
-[node name="Stats" type="Button" parent="CanvasLayer/HBoxContainer/Menu/Container/Options"]
-custom_minimum_size = Vector2(384, 64)
+[node name="Store" type="Button" parent="CanvasLayer/HBoxContainer/Menu/MarginContainer/Container/Options"]
+custom_minimum_size = Vector2(256, 48)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 20
+text = "STORE"
+
+[node name="Friends" type="Button" parent="CanvasLayer/HBoxContainer/Menu/MarginContainer/Container/Options"]
+custom_minimum_size = Vector2(256, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+text = "FRIENDS"
+
+[node name="Stats" type="Button" parent="CanvasLayer/HBoxContainer/Menu/MarginContainer/Container/Options"]
+custom_minimum_size = Vector2(256, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
 text = "STATS"
 
-[node name="Settings" type="Button" parent="CanvasLayer/HBoxContainer/Menu/Container/Options"]
-custom_minimum_size = Vector2(384, 64)
+[node name="Play2" type="Button" parent="CanvasLayer/HBoxContainer/Menu/MarginContainer/Container/Options"]
+custom_minimum_size = Vector2(256, 48)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 20
+text = "ACHIEVEMENTS"
+
+[node name="Help" type="Button" parent="CanvasLayer/HBoxContainer/Menu/MarginContainer/Container/Options"]
+custom_minimum_size = Vector2(256, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+text = "HELP"
+
+[node name="Settings" type="Button" parent="CanvasLayer/HBoxContainer/Menu/MarginContainer/Container/Options"]
+custom_minimum_size = Vector2(256, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
 text = "SETTINGS"
 
-[node name="Quit" type="Button" parent="CanvasLayer/HBoxContainer/Menu/Container/Options"]
-custom_minimum_size = Vector2(384, 64)
+[node name="Quit" type="Button" parent="CanvasLayer/HBoxContainer/Menu/MarginContainer/Container/Options"]
+custom_minimum_size = Vector2(256, 48)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 20
 text = "QUIT"
 
 [node name="Window" type="Control" parent="CanvasLayer/HBoxContainer"]
@@ -108,6 +140,12 @@ size_flags_horizontal = 3
 
 [node name="Loadout" parent="CanvasLayer/HBoxContainer/Window" instance=ExtResource("2_0cfwn")]
 layout_mode = 1
+
+[node name="Main" parent="CanvasLayer/HBoxContainer/Window/Loadout" index="0"]
+visible = true
+
+[node name="HeavyWeapons" parent="CanvasLayer/HBoxContainer/Window/Loadout" index="3"]
+visible = false
 
 [node name="Inventory" type="ColorRect" parent="CanvasLayer/HBoxContainer/Window"]
 visible = false
@@ -135,3 +173,5 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[editable path="CanvasLayer/HBoxContainer/Window/Loadout"]

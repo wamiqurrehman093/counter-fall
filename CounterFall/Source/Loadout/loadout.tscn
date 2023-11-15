@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cgs1vwaecw75o"]
+[gd_scene load_steps=10 format=3 uid="uid://cgs1vwaecw75o"]
 
 [ext_resource type="Script" path="res://Source/Loadout/loadout.gd" id="1_d76ju"]
 [ext_resource type="PackedScene" uid="uid://klvwn3o5y5jb" path="res://Source/UserInterface/Buttons/large_icon_button.tscn" id="1_motuq"]
@@ -10,6 +10,10 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_mpkw1"]
 font_size = 48
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_n0otg"]
+font_size = 24
 font_color = Color(0, 0, 0, 1)
 
 [node name="Loadout" type="ColorRect"]
@@ -60,10 +64,10 @@ layout_mode = 2
 custom_minimum_size = Vector2(176, 176)
 layout_mode = 2
 
-[node name="MeleeButton" parent="Main/CenterContainer/GridContainer/Item2" instance=ExtResource("1_motuq")]
+[node name="MeleeWeaponsButton" parent="Main/CenterContainer/GridContainer/Item2" instance=ExtResource("1_motuq")]
 layout_mode = 2
 texture_normal = ExtResource("2_lxx6n")
-label = "MELEE"
+label = "MELEE WEAPONS"
 
 [node name="Item3" type="VBoxContainer" parent="Main/CenterContainer/GridContainer"]
 custom_minimum_size = Vector2(176, 176)
@@ -73,10 +77,10 @@ layout_mode = 2
 custom_minimum_size = Vector2(176, 176)
 layout_mode = 2
 
-[node name="PistolsButton" parent="Main/CenterContainer/GridContainer/Item4" instance=ExtResource("1_motuq")]
+[node name="LightWeaponsButton" parent="Main/CenterContainer/GridContainer/Item4" instance=ExtResource("1_motuq")]
 layout_mode = 2
 texture_normal = ExtResource("3_jt7rm")
-label = "PISTOLS"
+label = "LIGHT WEAPONS"
 
 [node name="Item5" type="VBoxContainer" parent="Main/CenterContainer/GridContainer"]
 custom_minimum_size = Vector2(176, 176)
@@ -86,10 +90,10 @@ layout_mode = 2
 custom_minimum_size = Vector2(176, 176)
 layout_mode = 2
 
-[node name="RiflesButton" parent="Main/CenterContainer/GridContainer/Item6" instance=ExtResource("1_motuq")]
+[node name="HeavyWeaponsButton" parent="Main/CenterContainer/GridContainer/Item6" instance=ExtResource("1_motuq")]
 layout_mode = 2
 texture_normal = ExtResource("4_v6t1v")
-label = "RIFLES"
+label = "HEAVY WEAPONS"
 
 [node name="Item7" type="VBoxContainer" parent="Main/CenterContainer/GridContainer"]
 custom_minimum_size = Vector2(176, 176)
@@ -99,16 +103,17 @@ layout_mode = 2
 custom_minimum_size = Vector2(176, 176)
 layout_mode = 2
 
-[node name="GrenadesButton" parent="Main/CenterContainer/GridContainer/Item8" instance=ExtResource("1_motuq")]
+[node name="UtilitiesButton" parent="Main/CenterContainer/GridContainer/Item8" instance=ExtResource("1_motuq")]
 layout_mode = 2
 texture_normal = ExtResource("5_t7wej")
-label = "GRENADES"
+label = "UTILITIES"
 
 [node name="Item9" type="VBoxContainer" parent="Main/CenterContainer/GridContainer"]
 custom_minimum_size = Vector2(176, 176)
 layout_mode = 2
 
-[node name="Melee" type="VBoxContainer" parent="."]
+[node name="MeleeWeapons" type="VBoxContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -116,54 +121,507 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Header" type="HBoxContainer" parent="Melee"]
+[node name="Header" type="HBoxContainer" parent="MeleeWeapons"]
 layout_mode = 2
 
-[node name="Back" type="Button" parent="Melee/Header"]
+[node name="Back" type="Button" parent="MeleeWeapons/Header"]
 custom_minimum_size = Vector2(120, 48)
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 24
 text = "BACK"
 
-[node name="MarginContainer" type="MarginContainer" parent="Melee/Header"]
+[node name="MarginContainer" type="MarginContainer" parent="MeleeWeapons/Header"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_right = 120
 
-[node name="Heading" type="Label" parent="Melee/Header/MarginContainer"]
+[node name="Heading" type="Label" parent="MeleeWeapons/Header/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "MELEE"
+text = "MELEE WEAPONS"
 label_settings = SubResource("LabelSettings_mpkw1")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CenterContainer" type="CenterContainer" parent="Melee"]
+[node name="CenterContainer" type="CenterContainer" parent="MeleeWeapons"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="GridContainer" type="GridContainer" parent="Melee/CenterContainer"]
+[node name="GridContainer" type="GridContainer" parent="MeleeWeapons/CenterContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 columns = 2
 
-[node name="Item1" type="VBoxContainer" parent="Melee/CenterContainer/GridContainer"]
+[node name="Item1" type="VBoxContainer" parent="MeleeWeapons/CenterContainer/GridContainer"]
 custom_minimum_size = Vector2(176, 176)
 layout_mode = 2
 
-[node name="Knife" parent="Melee/CenterContainer/GridContainer/Item1" instance=ExtResource("1_motuq")]
+[node name="Knife" parent="MeleeWeapons/CenterContainer/GridContainer/Item1" instance=ExtResource("1_motuq")]
 custom_minimum_size = Vector2(320, 320)
 layout_mode = 2
 texture_normal = ExtResource("2_lxx6n")
 label = "KNIFE"
 
-[node name="Item2" type="VBoxContainer" parent="Melee/CenterContainer/GridContainer"]
+[node name="Item2" type="VBoxContainer" parent="MeleeWeapons/CenterContainer/GridContainer"]
 custom_minimum_size = Vector2(176, 176)
 layout_mode = 2
 
-[node name="Sword" parent="Melee/CenterContainer/GridContainer/Item2" instance=ExtResource("1_motuq")]
+[node name="Sword" parent="MeleeWeapons/CenterContainer/GridContainer/Item2" instance=ExtResource("1_motuq")]
 custom_minimum_size = Vector2(320, 320)
 layout_mode = 2
 texture_normal = ExtResource("6_vfkuy")
 label = "SWORD"
+
+[node name="LightWeapons" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header" type="HBoxContainer" parent="LightWeapons"]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="LightWeapons/Header"]
+custom_minimum_size = Vector2(120, 48)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 24
+text = "BACK"
+
+[node name="MarginContainer" type="MarginContainer" parent="LightWeapons/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 120
+
+[node name="Heading" type="Label" parent="LightWeapons/Header/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "LIGHT WEAPONS"
+label_settings = SubResource("LabelSettings_mpkw1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="LightWeapons"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="LightWeapons/CenterContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 5
+
+[node name="Item1" type="VBoxContainer" parent="LightWeapons/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="Item2" type="VBoxContainer" parent="LightWeapons/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="Item3" type="VBoxContainer" parent="LightWeapons/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="Usps" parent="LightWeapons/CenterContainer/GridContainer/Item3" instance=ExtResource("1_motuq")]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+texture_normal = ExtResource("3_jt7rm")
+label = "USP-S"
+
+[node name="Item4" type="VBoxContainer" parent="LightWeapons/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="Item5" type="VBoxContainer" parent="LightWeapons/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="Item6" type="VBoxContainer" parent="LightWeapons/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="Item7" type="VBoxContainer" parent="LightWeapons/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="Glock" parent="LightWeapons/CenterContainer/GridContainer/Item7" instance=ExtResource("1_motuq")]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+texture_normal = ExtResource("3_jt7rm")
+label = "GLOCK"
+
+[node name="Item8" type="VBoxContainer" parent="LightWeapons/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="Item9" type="VBoxContainer" parent="LightWeapons/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="Tec9" parent="LightWeapons/CenterContainer/GridContainer/Item9" instance=ExtResource("1_motuq")]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+texture_normal = ExtResource("3_jt7rm")
+label = "TEC-9"
+
+[node name="Item10" type="VBoxContainer" parent="LightWeapons/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="Item11" type="VBoxContainer" parent="LightWeapons/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="P2000" parent="LightWeapons/CenterContainer/GridContainer/Item11" instance=ExtResource("1_motuq")]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+texture_normal = ExtResource("3_jt7rm")
+label = "P2000"
+
+[node name="Item12" type="VBoxContainer" parent="LightWeapons/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="Item13" type="VBoxContainer" parent="LightWeapons/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="Item14" type="VBoxContainer" parent="LightWeapons/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="Item15" type="VBoxContainer" parent="LightWeapons/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="FiveSeven" parent="LightWeapons/CenterContainer/GridContainer/Item15" instance=ExtResource("1_motuq")]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+texture_normal = ExtResource("3_jt7rm")
+label = "FIVE-SEVEN"
+
+[node name="Item16" type="VBoxContainer" parent="LightWeapons/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="Item17" type="VBoxContainer" parent="LightWeapons/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="P250" parent="LightWeapons/CenterContainer/GridContainer/Item17" instance=ExtResource("1_motuq")]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+texture_normal = ExtResource("3_jt7rm")
+label = "P250"
+
+[node name="Item18" type="VBoxContainer" parent="LightWeapons/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="Item19" type="VBoxContainer" parent="LightWeapons/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="Revolver" parent="LightWeapons/CenterContainer/GridContainer/Item19" instance=ExtResource("1_motuq")]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+texture_normal = ExtResource("3_jt7rm")
+label = "REVOLVER"
+
+[node name="Item20" type="VBoxContainer" parent="LightWeapons/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="Item21" type="VBoxContainer" parent="LightWeapons/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="Item22" type="VBoxContainer" parent="LightWeapons/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="Item23" type="VBoxContainer" parent="LightWeapons/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="Deagle" parent="LightWeapons/CenterContainer/GridContainer/Item23" instance=ExtResource("1_motuq")]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+texture_normal = ExtResource("3_jt7rm")
+label = "DEAGLE"
+
+[node name="Item24" type="VBoxContainer" parent="LightWeapons/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="Item25" type="VBoxContainer" parent="LightWeapons/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="HeavyWeapons" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header" type="HBoxContainer" parent="HeavyWeapons"]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="HeavyWeapons/Header"]
+custom_minimum_size = Vector2(120, 48)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 24
+text = "BACK"
+
+[node name="MarginContainer" type="MarginContainer" parent="HeavyWeapons/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 120
+
+[node name="Heading" type="Label" parent="HeavyWeapons/Header/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "HEAVY WEAPONS"
+label_settings = SubResource("LabelSettings_mpkw1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="HeavyWeapons"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="WeaponsList" type="HBoxContainer" parent="HeavyWeapons/CenterContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 32
+
+[node name="Headings" type="VBoxContainer" parent="HeavyWeapons/CenterContainer/WeaponsList"]
+custom_minimum_size = Vector2(224, 0)
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Shotguns" type="Label" parent="HeavyWeapons/CenterContainer/WeaponsList/Headings"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 7
+text = "SHOTGUNS"
+label_settings = SubResource("LabelSettings_n0otg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MachineGuns" type="Label" parent="HeavyWeapons/CenterContainer/WeaponsList/Headings"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 7
+text = "MACHINE GUNS"
+label_settings = SubResource("LabelSettings_n0otg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Rifles" type="Label" parent="HeavyWeapons/CenterContainer/WeaponsList/Headings"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 7
+text = "RIFLES"
+label_settings = SubResource("LabelSettings_n0otg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Snipers" type="Label" parent="HeavyWeapons/CenterContainer/WeaponsList/Headings"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 7
+text = "SNIPERS"
+label_settings = SubResource("LabelSettings_n0otg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HeavyWeapons/CenterContainer/WeaponsList"]
+custom_minimum_size = Vector2(572, 568)
+layout_mode = 2
+
+[node name="Weapons" type="VBoxContainer" parent="HeavyWeapons/CenterContainer/WeaponsList/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 28
+
+[node name="ShotGuns" type="HBoxContainer" parent="HeavyWeapons/CenterContainer/WeaponsList/ScrollContainer/Weapons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="Nova" parent="HeavyWeapons/CenterContainer/WeaponsList/ScrollContainer/Weapons/ShotGuns" instance=ExtResource("1_motuq")]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+texture_normal = ExtResource("4_v6t1v")
+label = "NOVA"
+font_size = 18
+
+[node name="XM1014" parent="HeavyWeapons/CenterContainer/WeaponsList/ScrollContainer/Weapons/ShotGuns" instance=ExtResource("1_motuq")]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+texture_normal = ExtResource("4_v6t1v")
+label = "XM1014"
+font_size = 18
+
+[node name="Mag7" parent="HeavyWeapons/CenterContainer/WeaponsList/ScrollContainer/Weapons/ShotGuns" instance=ExtResource("1_motuq")]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+texture_normal = ExtResource("4_v6t1v")
+label = "MAG-7"
+font_size = 18
+
+[node name="SawedOff" parent="HeavyWeapons/CenterContainer/WeaponsList/ScrollContainer/Weapons/ShotGuns" instance=ExtResource("1_motuq")]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+texture_normal = ExtResource("4_v6t1v")
+label = "SAWED-OFF"
+font_size = 18
+
+[node name="MachineGuns" type="HBoxContainer" parent="HeavyWeapons/CenterContainer/WeaponsList/ScrollContainer/Weapons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="Negev" parent="HeavyWeapons/CenterContainer/WeaponsList/ScrollContainer/Weapons/MachineGuns" instance=ExtResource("1_motuq")]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+texture_normal = ExtResource("4_v6t1v")
+label = "NEGEV"
+font_size = 18
+
+[node name="MAC10" parent="HeavyWeapons/CenterContainer/WeaponsList/ScrollContainer/Weapons/MachineGuns" instance=ExtResource("1_motuq")]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+texture_normal = ExtResource("4_v6t1v")
+label = "MAC-10"
+font_size = 18
+
+[node name="MP9" parent="HeavyWeapons/CenterContainer/WeaponsList/ScrollContainer/Weapons/MachineGuns" instance=ExtResource("1_motuq")]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+texture_normal = ExtResource("4_v6t1v")
+label = "MP9"
+font_size = 18
+
+[node name="UMP45" parent="HeavyWeapons/CenterContainer/WeaponsList/ScrollContainer/Weapons/MachineGuns" instance=ExtResource("1_motuq")]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+texture_normal = ExtResource("4_v6t1v")
+label = "UMP-45"
+font_size = 18
+
+[node name="MP7" parent="HeavyWeapons/CenterContainer/WeaponsList/ScrollContainer/Weapons/MachineGuns" instance=ExtResource("1_motuq")]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+texture_normal = ExtResource("4_v6t1v")
+label = "MP7"
+font_size = 18
+
+[node name="PPBizon" parent="HeavyWeapons/CenterContainer/WeaponsList/ScrollContainer/Weapons/MachineGuns" instance=ExtResource("1_motuq")]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+texture_normal = ExtResource("4_v6t1v")
+label = "PP-BIZON"
+font_size = 18
+
+[node name="P90" parent="HeavyWeapons/CenterContainer/WeaponsList/ScrollContainer/Weapons/MachineGuns" instance=ExtResource("1_motuq")]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+texture_normal = ExtResource("4_v6t1v")
+label = "P-90"
+font_size = 18
+
+[node name="Rifles" type="HBoxContainer" parent="HeavyWeapons/CenterContainer/WeaponsList/ScrollContainer/Weapons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="GalilAr" parent="HeavyWeapons/CenterContainer/WeaponsList/ScrollContainer/Weapons/Rifles" instance=ExtResource("1_motuq")]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+texture_normal = ExtResource("4_v6t1v")
+label = "GALIL AR"
+font_size = 18
+
+[node name="FAMAS" parent="HeavyWeapons/CenterContainer/WeaponsList/ScrollContainer/Weapons/Rifles" instance=ExtResource("1_motuq")]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+texture_normal = ExtResource("4_v6t1v")
+label = "FAMAS"
+font_size = 18
+
+[node name="AK47" parent="HeavyWeapons/CenterContainer/WeaponsList/ScrollContainer/Weapons/Rifles" instance=ExtResource("1_motuq")]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+texture_normal = ExtResource("4_v6t1v")
+label = "AK-47"
+font_size = 18
+
+[node name="M4A4" parent="HeavyWeapons/CenterContainer/WeaponsList/ScrollContainer/Weapons/Rifles" instance=ExtResource("1_motuq")]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+texture_normal = ExtResource("4_v6t1v")
+label = "M4A4"
+font_size = 18
+
+[node name="M4A1S" parent="HeavyWeapons/CenterContainer/WeaponsList/ScrollContainer/Weapons/Rifles" instance=ExtResource("1_motuq")]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+texture_normal = ExtResource("4_v6t1v")
+label = "M4A1-S"
+font_size = 18
+
+[node name="SG553" parent="HeavyWeapons/CenterContainer/WeaponsList/ScrollContainer/Weapons/Rifles" instance=ExtResource("1_motuq")]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+texture_normal = ExtResource("4_v6t1v")
+label = "SG 553"
+font_size = 18
+
+[node name="AUG" parent="HeavyWeapons/CenterContainer/WeaponsList/ScrollContainer/Weapons/Rifles" instance=ExtResource("1_motuq")]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+texture_normal = ExtResource("4_v6t1v")
+label = "AUG"
+font_size = 18
+
+[node name="Snipers" type="HBoxContainer" parent="HeavyWeapons/CenterContainer/WeaponsList/ScrollContainer/Weapons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="SSG08" parent="HeavyWeapons/CenterContainer/WeaponsList/ScrollContainer/Weapons/Snipers" instance=ExtResource("1_motuq")]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+texture_normal = ExtResource("4_v6t1v")
+label = "SSG 08"
+font_size = 18
+
+[node name="AWP" parent="HeavyWeapons/CenterContainer/WeaponsList/ScrollContainer/Weapons/Snipers" instance=ExtResource("1_motuq")]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+texture_normal = ExtResource("4_v6t1v")
+label = "AWP"
+font_size = 18
+
+[node name="G3SG1" parent="HeavyWeapons/CenterContainer/WeaponsList/ScrollContainer/Weapons/Snipers" instance=ExtResource("1_motuq")]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+texture_normal = ExtResource("4_v6t1v")
+label = "G3SG1"
+font_size = 18
+
+[node name="SCAR20" parent="HeavyWeapons/CenterContainer/WeaponsList/ScrollContainer/Weapons/Snipers" instance=ExtResource("1_motuq")]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+texture_normal = ExtResource("4_v6t1v")
+label = "SCAR-20"
+font_size = 18
