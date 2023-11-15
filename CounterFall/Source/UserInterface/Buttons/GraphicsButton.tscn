@@ -7,3 +7,8 @@ ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("2_7dqg8")
 normal_colour = Color(0.25098, 0.25098, 0.25098, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

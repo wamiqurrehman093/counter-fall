@@ -1,11 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://gab3psw8bj4k"]
+[gd_scene load_steps=5 format=3 uid="uid://gab3psw8bj4k"]
 
 [ext_resource type="Script" path="res://Source/Main/main.gd" id="1_f1jb8"]
-[ext_resource type="Texture2D" uid="uid://b4etycoeh4lrl" path="res://Assets/Graphics/Icons/Knives/Knife_Base.png" id="2_tibl3"]
-[ext_resource type="PackedScene" uid="uid://klvwn3o5y5jb" path="res://Source/UserInterface/Buttons/large_icon_button.tscn" id="2_twiqn"]
-[ext_resource type="Texture2D" uid="uid://btxek65vsf6oj" path="res://Assets/Graphics/Icons/Pistols/Pisto_Base.png" id="3_gh2pf"]
-[ext_resource type="Texture2D" uid="uid://dry5w3shk5p41" path="res://Assets/Graphics/Icons/Rifles/Rifle_Base.png" id="4_tfn4c"]
-[ext_resource type="Texture2D" uid="uid://bki45ijkbrli" path="res://Assets/Graphics/Icons/Grenade/Grenade_Base.png" id="5_pxhq0"]
+[ext_resource type="PackedScene" uid="uid://cgs1vwaecw75o" path="res://Source/Loadout/loadout.tscn" id="2_0cfwn"]
 
 [sub_resource type="Environment" id="Environment_outlj"]
 background_mode = 1
@@ -15,10 +11,6 @@ tonemap_mode = 3
 
 [sub_resource type="LabelSettings" id="LabelSettings_e7kqa"]
 font_size = 72
-
-[sub_resource type="LabelSettings" id="LabelSettings_mpkw1"]
-font_size = 48
-font_color = Color(0, 0, 0, 1)
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_f1jb8")
@@ -114,89 +106,8 @@ text = "QUIT"
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Loadout" type="ColorRect" parent="CanvasLayer/HBoxContainer/Window"]
+[node name="Loadout" parent="CanvasLayer/HBoxContainer/Window" instance=ExtResource("2_0cfwn")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/Window/Loadout"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Heading" type="Label" parent="CanvasLayer/HBoxContainer/Window/Loadout/VBoxContainer"]
-layout_mode = 2
-text = "LOADOUT"
-label_settings = SubResource("LabelSettings_mpkw1")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/HBoxContainer/Window/Loadout/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Container" type="GridContainer" parent="CanvasLayer/HBoxContainer/Window/Loadout/VBoxContainer/CenterContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-columns = 3
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/Window/Loadout/VBoxContainer/CenterContainer/Container"]
-custom_minimum_size = Vector2(176, 176)
-layout_mode = 2
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/Window/Loadout/VBoxContainer/CenterContainer/Container"]
-custom_minimum_size = Vector2(176, 176)
-layout_mode = 2
-
-[node name="LargeIconButton" parent="CanvasLayer/HBoxContainer/Window/Loadout/VBoxContainer/CenterContainer/Container/VBoxContainer2" instance=ExtResource("2_twiqn")]
-layout_mode = 2
-texture_normal = ExtResource("2_tibl3")
-
-[node name="VBoxContainer3" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/Window/Loadout/VBoxContainer/CenterContainer/Container"]
-custom_minimum_size = Vector2(176, 176)
-layout_mode = 2
-
-[node name="VBoxContainer4" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/Window/Loadout/VBoxContainer/CenterContainer/Container"]
-custom_minimum_size = Vector2(176, 176)
-layout_mode = 2
-
-[node name="LargeIconButton" parent="CanvasLayer/HBoxContainer/Window/Loadout/VBoxContainer/CenterContainer/Container/VBoxContainer4" instance=ExtResource("2_twiqn")]
-layout_mode = 2
-texture_normal = ExtResource("3_gh2pf")
-
-[node name="VBoxContainer5" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/Window/Loadout/VBoxContainer/CenterContainer/Container"]
-custom_minimum_size = Vector2(176, 176)
-layout_mode = 2
-
-[node name="VBoxContainer6" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/Window/Loadout/VBoxContainer/CenterContainer/Container"]
-custom_minimum_size = Vector2(176, 176)
-layout_mode = 2
-
-[node name="LargeIconButton" parent="CanvasLayer/HBoxContainer/Window/Loadout/VBoxContainer/CenterContainer/Container/VBoxContainer6" instance=ExtResource("2_twiqn")]
-layout_mode = 2
-texture_normal = ExtResource("4_tfn4c")
-
-[node name="VBoxContainer7" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/Window/Loadout/VBoxContainer/CenterContainer/Container"]
-custom_minimum_size = Vector2(176, 176)
-layout_mode = 2
-
-[node name="VBoxContainer8" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/Window/Loadout/VBoxContainer/CenterContainer/Container"]
-custom_minimum_size = Vector2(176, 176)
-layout_mode = 2
-
-[node name="LargeIconButton" parent="CanvasLayer/HBoxContainer/Window/Loadout/VBoxContainer/CenterContainer/Container/VBoxContainer8" instance=ExtResource("2_twiqn")]
-layout_mode = 2
-texture_normal = ExtResource("5_pxhq0")
-
-[node name="VBoxContainer9" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/Window/Loadout/VBoxContainer/CenterContainer/Container"]
-custom_minimum_size = Vector2(176, 176)
-layout_mode = 2
 
 [node name="Inventory" type="ColorRect" parent="CanvasLayer/HBoxContainer/Window"]
 visible = false
