@@ -16,6 +16,7 @@ func _on_WindowButton_pressed(window_name):
 	find_child(currently_open).hide()
 	find_child(window_name).show()
 	currently_open = window_name
+	find_child(window_name + "Button")._on_mouse_exited()
 
 func _on_Back_pressed():
 	find_child(currently_open).hide()

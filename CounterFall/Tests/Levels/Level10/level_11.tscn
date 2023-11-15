@@ -290,19 +290,37 @@ run_speed = 10.0
 [node name="Mesh" parent="CharacterBody3D" instance=ExtResource("4_h70hv")]
 
 [node name="Skeleton3D" parent="CharacterBody3D/Mesh/Armature" index="0"]
-bones/1/position = Vector3(1.87599e-10, 0.15, 0.883721)
-bones/5/rotation = Quaternion(-0.353325, -0.10993, -0.288111, 0.883215)
-bones/6/rotation = Quaternion(0.315639, -0.00203705, -0.480798, 0.818047)
-bones/7/rotation = Quaternion(0.0178736, 0.108797, 0.00945387, 0.993858)
-bones/27/rotation = Quaternion(-0.397741, 0.0702152, 0.287201, 0.868554)
-bones/28/rotation = Quaternion(0.234171, 0.00225202, 0.356701, 0.904391)
-bones/29/rotation = Quaternion(-0.0703091, -0.190274, -0.0282379, 0.978803)
-bones/45/rotation = Quaternion(0.730342, -0.074094, -0.668543, 0.118997)
-bones/46/rotation = Quaternion(-0.000135619, -1.554e-07, -0.208491, 0.978024)
-bones/47/rotation = Quaternion(0.0302935, -0.0466792, 0.323882, 0.944459)
-bones/49/rotation = Quaternion(0.751048, -0.0966447, 0.650476, -0.058894)
-bones/50/rotation = Quaternion(-0.000101613, 1.60492e-07, 0.156329, 0.987705)
-bones/51/rotation = Quaternion(0.0203129, 0.0748482, -0.499721, 0.862707)
+bones/1/position = Vector3(-2.35244e-10, 0.15, 0.885482)
+bones/5/rotation = Quaternion(-0.352518, -0.110667, -0.290125, 0.882786)
+bones/6/rotation = Quaternion(0.313367, -0.00204428, -0.477337, 0.820943)
+bones/7/rotation = Quaternion(0.0200775, 0.109393, 0.00756035, 0.993767)
+bones/27/rotation = Quaternion(-0.395974, 0.0721271, 0.290297, 0.868176)
+bones/28/rotation = Quaternion(0.230444, 0.00225992, 0.351024, 0.907564)
+bones/29/rotation = Quaternion(-0.0675826, -0.190812, -0.0260744, 0.97895)
+bones/30/rotation = Quaternion(0.0992187, -0.0263339, 0.215069, 0.971189)
+bones/31/rotation = Quaternion(-0.0434176, 0.00125973, 0.156077, 0.986789)
+bones/37/rotation = Quaternion(0.00629944, -0.00241956, 0.0929294, 0.99565)
+bones/38/rotation = Quaternion(-0.0400974, 0.00212167, 0.14632, 0.988422)
+bones/39/rotation = Quaternion(0.0590127, -0.034298, 0.204466, 0.976491)
+bones/40/rotation = Quaternion(-0.00572749, -0.00179919, 0.103083, 0.994655)
+bones/41/rotation = Quaternion(-0.0482141, -0.00755032, 0.272844, 0.96082)
+bones/45/rotation = Quaternion(0.730788, -0.0701452, -0.669138, 0.115249)
+bones/46/rotation = Quaternion(-0.000129039, -1.53172e-07, -0.198377, 0.980126)
+bones/47/rotation = Quaternion(0.0299591, -0.0468888, 0.319302, 0.946018)
+bones/49/rotation = Quaternion(0.750432, -0.101785, 0.649972, -0.0634685)
+bones/50/rotation = Quaternion(-9.25419e-05, 1.63795e-07, 0.142374, 0.989813)
+bones/51/rotation = Quaternion(0.0196623, 0.0750863, -0.493516, 0.866266)
+bones/53/position = Vector3(0.309073, 0.0286566, 1.00938)
+bones/53/rotation = Quaternion(0.159359, -0.267786, 0.938836, -0.146569)
+bones/54/position = Vector3(0.16179, -0.0167788, 0.0999278)
+bones/54/rotation = Quaternion(-0.635728, -0.307991, 0.63776, 0.307009)
+bones/55/position = Vector3(0.128684, 0.512928, 1.07784)
+bones/56/position = Vector3(0.104426, -0.346875, 0.512615)
+bones/57/position = Vector3(-0.309073, 0.148489, 0.927034)
+bones/57/rotation = Quaternion(-0.10749, -0.539523, 0.813657, 0.187945)
+bones/58/position = Vector3(-0.178265, 0.340502, 0.0931127)
+bones/58/rotation = Quaternion(0.635728, -0.307991, 0.63776, -0.307009)
+bones/59/position = Vector3(-0.139076, 0.530129, 1.04059)
 
 [node name="AnimationTree" parent="CharacterBody3D/Mesh" index="2"]
 parameters/light_punch_blend/blend_amount = 0
@@ -332,7 +350,7 @@ current = true
 visible = false
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="CharacterBody3D/Weapons/Knife"]
-transform = Transform3D(-0.936056, 0.149755, -0.318389, -0.310637, -0.776702, 0.54794, -0.165237, 0.611806, 0.773556, -0.339495, 0.826131, 0.0442146)
+transform = Transform3D(-0.936055, 0.149754, -0.318392, -0.310637, -0.776705, 0.547935, -0.165241, 0.611802, 0.773558, -0.339494, 0.826074, 0.0442131)
 bone_name = "Middle1.R"
 bone_idx = 33
 use_external_skeleton = true

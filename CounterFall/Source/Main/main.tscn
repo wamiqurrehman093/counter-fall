@@ -141,12 +141,6 @@ size_flags_horizontal = 3
 [node name="Loadout" parent="CanvasLayer/HBoxContainer/Window" instance=ExtResource("2_0cfwn")]
 layout_mode = 1
 
-[node name="Main" parent="CanvasLayer/HBoxContainer/Window/Loadout" index="0"]
-visible = true
-
-[node name="HeavyWeapons" parent="CanvasLayer/HBoxContainer/Window/Loadout" index="3"]
-visible = false
-
 [node name="Inventory" type="ColorRect" parent="CanvasLayer/HBoxContainer/Window"]
 visible = false
 layout_mode = 1
@@ -173,5 +167,3 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[editable path="CanvasLayer/HBoxContainer/Window/Loadout"]

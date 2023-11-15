@@ -151,14 +151,14 @@ size_flags_vertical = 3
 [node name="GridContainer" type="GridContainer" parent="MeleeWeapons/CenterContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-columns = 2
+columns = 3
 
 [node name="Item1" type="VBoxContainer" parent="MeleeWeapons/CenterContainer/GridContainer"]
 custom_minimum_size = Vector2(176, 176)
 layout_mode = 2
 
 [node name="Knife" parent="MeleeWeapons/CenterContainer/GridContainer/Item1" instance=ExtResource("1_motuq")]
-custom_minimum_size = Vector2(320, 320)
+custom_minimum_size = Vector2(256, 256)
 layout_mode = 2
 texture_normal = ExtResource("2_lxx6n")
 label = "KNIFE"
@@ -168,13 +168,22 @@ custom_minimum_size = Vector2(176, 176)
 layout_mode = 2
 
 [node name="Sword" parent="MeleeWeapons/CenterContainer/GridContainer/Item2" instance=ExtResource("1_motuq")]
-custom_minimum_size = Vector2(320, 320)
+custom_minimum_size = Vector2(256, 256)
 layout_mode = 2
 texture_normal = ExtResource("6_vfkuy")
 label = "SWORD"
 
+[node name="Item3" type="VBoxContainer" parent="MeleeWeapons/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(176, 176)
+layout_mode = 2
+
+[node name="Axe" parent="MeleeWeapons/CenterContainer/GridContainer/Item3" instance=ExtResource("1_motuq")]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+texture_normal = ExtResource("6_vfkuy")
+label = "AXE"
+
 [node name="LightWeapons" type="VBoxContainer" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -232,6 +241,14 @@ layout_mode = 2
 texture_normal = ExtResource("3_jt7rm")
 label = "USP-S"
 
+[node name="Label" parent="LightWeapons/CenterContainer/GridContainer/Item3/Usps" index="0"]
+anchors_preset = 10
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_top = -24.0
+offset_bottom = 10.0
+grow_vertical = 1
+
 [node name="Item4" type="VBoxContainer" parent="LightWeapons/CenterContainer/GridContainer"]
 custom_minimum_size = Vector2(92, 92)
 layout_mode = 2
@@ -254,6 +271,19 @@ layout_mode = 2
 texture_normal = ExtResource("3_jt7rm")
 label = "GLOCK"
 
+[node name="Label" parent="LightWeapons/CenterContainer/GridContainer/Item7/Glock" index="0"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_right = 0.0
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = -17.0
+offset_right = -24.0
+offset_bottom = 17.0
+grow_horizontal = 1
+grow_vertical = 2
+horizontal_alignment = 2
+
 [node name="Item8" type="VBoxContainer" parent="LightWeapons/CenterContainer/GridContainer"]
 custom_minimum_size = Vector2(92, 92)
 layout_mode = 2
@@ -268,6 +298,19 @@ layout_mode = 2
 texture_normal = ExtResource("3_jt7rm")
 label = "TEC-9"
 
+[node name="Label" parent="LightWeapons/CenterContainer/GridContainer/Item9/Tec9" index="0"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 23.0
+offset_top = -17.0
+offset_right = 151.0
+offset_bottom = 17.0
+grow_horizontal = 0
+grow_vertical = 2
+horizontal_alignment = 0
+
 [node name="Item10" type="VBoxContainer" parent="LightWeapons/CenterContainer/GridContainer"]
 custom_minimum_size = Vector2(92, 92)
 layout_mode = 2
@@ -281,6 +324,19 @@ custom_minimum_size = Vector2(92, 92)
 layout_mode = 2
 texture_normal = ExtResource("3_jt7rm")
 label = "P2000"
+
+[node name="Label" parent="LightWeapons/CenterContainer/GridContainer/Item11/P2000" index="0"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_right = 0.0
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = -17.0
+offset_right = -24.0
+offset_bottom = 17.0
+grow_horizontal = 1
+grow_vertical = 2
+horizontal_alignment = 2
 
 [node name="Item12" type="VBoxContainer" parent="LightWeapons/CenterContainer/GridContainer"]
 custom_minimum_size = Vector2(92, 92)
@@ -304,6 +360,19 @@ layout_mode = 2
 texture_normal = ExtResource("3_jt7rm")
 label = "FIVE-SEVEN"
 
+[node name="Label" parent="LightWeapons/CenterContainer/GridContainer/Item15/FiveSeven" index="0"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 23.0
+offset_top = -17.0
+offset_right = 151.0
+offset_bottom = 17.0
+grow_horizontal = 0
+grow_vertical = 2
+horizontal_alignment = 0
+
 [node name="Item16" type="VBoxContainer" parent="LightWeapons/CenterContainer/GridContainer"]
 custom_minimum_size = Vector2(92, 92)
 layout_mode = 2
@@ -318,6 +387,19 @@ layout_mode = 2
 texture_normal = ExtResource("3_jt7rm")
 label = "P250"
 
+[node name="Label" parent="LightWeapons/CenterContainer/GridContainer/Item17/P250" index="0"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_right = 0.0
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = -17.0
+offset_right = -24.0
+offset_bottom = 17.0
+grow_horizontal = 1
+grow_vertical = 2
+horizontal_alignment = 2
+
 [node name="Item18" type="VBoxContainer" parent="LightWeapons/CenterContainer/GridContainer"]
 custom_minimum_size = Vector2(92, 92)
 layout_mode = 2
@@ -331,6 +413,19 @@ custom_minimum_size = Vector2(92, 92)
 layout_mode = 2
 texture_normal = ExtResource("3_jt7rm")
 label = "REVOLVER"
+
+[node name="Label" parent="LightWeapons/CenterContainer/GridContainer/Item19/Revolver" index="0"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 23.0
+offset_top = -17.0
+offset_right = 151.0
+offset_bottom = 17.0
+grow_horizontal = 0
+grow_vertical = 2
+horizontal_alignment = 0
 
 [node name="Item20" type="VBoxContainer" parent="LightWeapons/CenterContainer/GridContainer"]
 custom_minimum_size = Vector2(92, 92)
@@ -363,6 +458,7 @@ custom_minimum_size = Vector2(92, 92)
 layout_mode = 2
 
 [node name="HeavyWeapons" type="VBoxContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -406,7 +502,7 @@ theme_override_constants/separation = 32
 [node name="Headings" type="VBoxContainer" parent="HeavyWeapons/CenterContainer/WeaponsList"]
 custom_minimum_size = Vector2(224, 0)
 layout_mode = 2
-theme_override_constants/separation = 8
+theme_override_constants/separation = 28
 
 [node name="Shotguns" type="Label" parent="HeavyWeapons/CenterContainer/WeaponsList/Headings"]
 layout_mode = 2
@@ -625,3 +721,181 @@ layout_mode = 2
 texture_normal = ExtResource("4_v6t1v")
 label = "SCAR-20"
 font_size = 18
+
+[node name="Utilities" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header" type="HBoxContainer" parent="Utilities"]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="Utilities/Header"]
+custom_minimum_size = Vector2(120, 48)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 24
+text = "BACK"
+
+[node name="MarginContainer" type="MarginContainer" parent="Utilities/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 120
+
+[node name="Heading" type="Label" parent="Utilities/Header/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "UTILITIES"
+label_settings = SubResource("LabelSettings_mpkw1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="Utilities"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="WeaponsList" type="HBoxContainer" parent="Utilities/CenterContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 32
+
+[node name="Headings" type="VBoxContainer" parent="Utilities/CenterContainer/WeaponsList"]
+custom_minimum_size = Vector2(224, 0)
+layout_mode = 2
+theme_override_constants/separation = 28
+
+[node name="Nades" type="Label" parent="Utilities/CenterContainer/WeaponsList/Headings"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 7
+text = "NADES"
+label_settings = SubResource("LabelSettings_n0otg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Equipment" type="Label" parent="Utilities/CenterContainer/WeaponsList/Headings"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 7
+text = "EQUIPMENT"
+label_settings = SubResource("LabelSettings_n0otg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Potions" type="Label" parent="Utilities/CenterContainer/WeaponsList/Headings"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 7
+text = "POTIONS"
+label_settings = SubResource("LabelSettings_n0otg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Weapons" type="VBoxContainer" parent="Utilities/CenterContainer/WeaponsList"]
+layout_mode = 2
+theme_override_constants/separation = 28
+
+[node name="Nades" type="HBoxContainer" parent="Utilities/CenterContainer/WeaponsList/Weapons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="HeatGrenade" parent="Utilities/CenterContainer/WeaponsList/Weapons/Nades" instance=ExtResource("1_motuq")]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+texture_normal = ExtResource("4_v6t1v")
+label = "HEAT GRENADE"
+font_size = 18
+
+[node name="FlashGrenade" parent="Utilities/CenterContainer/WeaponsList/Weapons/Nades" instance=ExtResource("1_motuq")]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+texture_normal = ExtResource("4_v6t1v")
+label = "FLASH GRENADE"
+font_size = 18
+
+[node name="SmokeGrenade" parent="Utilities/CenterContainer/WeaponsList/Weapons/Nades" instance=ExtResource("1_motuq")]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+texture_normal = ExtResource("4_v6t1v")
+label = "SMOKE GRENADE"
+font_size = 18
+
+[node name="FireGrenade" parent="Utilities/CenterContainer/WeaponsList/Weapons/Nades" instance=ExtResource("1_motuq")]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+texture_normal = ExtResource("4_v6t1v")
+label = "FIRE GRENADE"
+font_size = 18
+
+[node name="Equipment" type="HBoxContainer" parent="Utilities/CenterContainer/WeaponsList/Weapons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="HeadArmour" parent="Utilities/CenterContainer/WeaponsList/Weapons/Equipment" instance=ExtResource("1_motuq")]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+texture_normal = ExtResource("4_v6t1v")
+label = "HEAD ARMOUR"
+font_size = 18
+
+[node name="BodyArmour" parent="Utilities/CenterContainer/WeaponsList/Weapons/Equipment" instance=ExtResource("1_motuq")]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+texture_normal = ExtResource("4_v6t1v")
+label = "BODY ARMOUR"
+font_size = 18
+
+[node name="DefuseKit" parent="Utilities/CenterContainer/WeaponsList/Weapons/Equipment" instance=ExtResource("1_motuq")]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+texture_normal = ExtResource("4_v6t1v")
+label = "DEFUSE KIT"
+font_size = 18
+
+[node name="TeleportationMark" parent="Utilities/CenterContainer/WeaponsList/Weapons/Equipment" instance=ExtResource("1_motuq")]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+texture_normal = ExtResource("4_v6t1v")
+label = "TELEPORTATION MARK"
+font_size = 18
+
+[node name="Potions" type="HBoxContainer" parent="Utilities/CenterContainer/WeaponsList/Weapons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="HealthPotion" parent="Utilities/CenterContainer/WeaponsList/Weapons/Potions" instance=ExtResource("1_motuq")]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+texture_normal = ExtResource("4_v6t1v")
+label = "HEALTH POTION"
+font_size = 18
+
+[node name="SpeedPotion" parent="Utilities/CenterContainer/WeaponsList/Weapons/Potions" instance=ExtResource("1_motuq")]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+texture_normal = ExtResource("4_v6t1v")
+label = "SPEED POTION"
+font_size = 18
+
+[node name="InvisibilityPotion" parent="Utilities/CenterContainer/WeaponsList/Weapons/Potions" instance=ExtResource("1_motuq")]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+texture_normal = ExtResource("4_v6t1v")
+label = "INVISIBILITY POTION"
+font_size = 18
+
+[editable path="LightWeapons/CenterContainer/GridContainer/Item3/Usps"]
+[editable path="LightWeapons/CenterContainer/GridContainer/Item7/Glock"]
+[editable path="LightWeapons/CenterContainer/GridContainer/Item9/Tec9"]
+[editable path="LightWeapons/CenterContainer/GridContainer/Item11/P2000"]
+[editable path="LightWeapons/CenterContainer/GridContainer/Item15/FiveSeven"]
+[editable path="LightWeapons/CenterContainer/GridContainer/Item17/P250"]
+[editable path="LightWeapons/CenterContainer/GridContainer/Item19/Revolver"]
