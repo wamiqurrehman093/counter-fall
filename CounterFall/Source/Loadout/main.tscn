@@ -1,0 +1,97 @@
+[gd_scene load_steps=7 format=3 uid="uid://cvggxw5qvsvly"]
+
+[ext_resource type="PackedScene" uid="uid://klvwn3o5y5jb" path="res://Source/UserInterface/Buttons/large_icon_button.tscn" id="1_4ioql"]
+[ext_resource type="Texture2D" uid="uid://b4etycoeh4lrl" path="res://Assets/Graphics/Icons/Melee/Knives/Knife_Base.png" id="2_46dw2"]
+[ext_resource type="Texture2D" uid="uid://btxek65vsf6oj" path="res://Assets/Graphics/Icons/Pistols/Pisto_Base.png" id="3_lj6fs"]
+[ext_resource type="Texture2D" uid="uid://dry5w3shk5p41" path="res://Assets/Graphics/Icons/Rifles/Rifle_Base.png" id="4_xpq7b"]
+[ext_resource type="Texture2D" uid="uid://bki45ijkbrli" path="res://Assets/Graphics/Icons/Grenade/Grenade_Base.png" id="5_jk232"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mpkw1"]
+font_size = 48
+font_color = Color(0, 0, 0, 1)
+
+[node name="Main" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Heading" type="Label" parent="."]
+layout_mode = 2
+text = "LOADOUT"
+label_settings = SubResource("LabelSettings_mpkw1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="Control" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -268.0
+offset_right = 268.0
+offset_bottom = 536.0
+grow_horizontal = 2
+size_flags_vertical = 3
+columns = 3
+
+[node name="Item1" type="VBoxContainer" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(176, 176)
+layout_mode = 2
+
+[node name="Item2" type="VBoxContainer" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(176, 176)
+layout_mode = 2
+
+[node name="MeleeWeaponsButton" parent="CenterContainer/GridContainer/Item2" instance=ExtResource("1_4ioql")]
+layout_mode = 2
+texture_normal = ExtResource("2_46dw2")
+label = "MELEE WEAPONS"
+
+[node name="Item3" type="VBoxContainer" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(176, 176)
+layout_mode = 2
+
+[node name="Item4" type="VBoxContainer" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(176, 176)
+layout_mode = 2
+
+[node name="LightWeaponsButton" parent="CenterContainer/GridContainer/Item4" instance=ExtResource("1_4ioql")]
+layout_mode = 2
+texture_normal = ExtResource("3_lj6fs")
+label = "LIGHT WEAPONS"
+
+[node name="Item5" type="VBoxContainer" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(176, 176)
+layout_mode = 2
+
+[node name="Item6" type="VBoxContainer" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(176, 176)
+layout_mode = 2
+
+[node name="HeavyWeaponsButton" parent="CenterContainer/GridContainer/Item6" instance=ExtResource("1_4ioql")]
+layout_mode = 2
+texture_normal = ExtResource("4_xpq7b")
+label = "HEAVY WEAPONS"
+
+[node name="Item7" type="VBoxContainer" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(176, 176)
+layout_mode = 2
+
+[node name="Item8" type="VBoxContainer" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(176, 176)
+layout_mode = 2
+
+[node name="UtilitiesButton" parent="CenterContainer/GridContainer/Item8" instance=ExtResource("1_4ioql")]
+layout_mode = 2
+texture_normal = ExtResource("5_jk232")
+label = "UTILITIES"
+
+[node name="Item9" type="VBoxContainer" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(176, 176)
+layout_mode = 2

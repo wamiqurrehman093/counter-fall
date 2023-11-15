@@ -1,0 +1,78 @@
+[gd_scene load_steps=5 format=3 uid="uid://barh4knslsxcy"]
+
+[ext_resource type="PackedScene" uid="uid://klvwn3o5y5jb" path="res://Source/UserInterface/Buttons/large_icon_button.tscn" id="1_18mc6"]
+[ext_resource type="Texture2D" uid="uid://b4etycoeh4lrl" path="res://Assets/Graphics/Icons/Melee/Knives/Knife_Base.png" id="2_o4t7p"]
+[ext_resource type="Texture2D" uid="uid://cbobolyiqjj7b" path="res://Assets/Graphics/Icons/Melee/Swords/Sword_Base.png" id="3_n8fug"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mpkw1"]
+font_size = 48
+font_color = Color(0, 0, 0, 1)
+
+[node name="MeleeWeapons" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="Header"]
+custom_minimum_size = Vector2(120, 48)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 24
+text = "BACK"
+
+[node name="MarginContainer" type="MarginContainer" parent="Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 112
+
+[node name="Heading" type="Label" parent="Header/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "MELEE WEAPONS"
+label_settings = SubResource("LabelSettings_mpkw1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 3
+
+[node name="Item1" type="VBoxContainer" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(176, 176)
+layout_mode = 2
+
+[node name="Knife" parent="CenterContainer/GridContainer/Item1" instance=ExtResource("1_18mc6")]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+texture_normal = ExtResource("2_o4t7p")
+label = "KNIFE"
+
+[node name="Item2" type="VBoxContainer" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(176, 176)
+layout_mode = 2
+
+[node name="Sword" parent="CenterContainer/GridContainer/Item2" instance=ExtResource("1_18mc6")]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+texture_normal = ExtResource("3_n8fug")
+label = "SWORD"
+
+[node name="Item3" type="VBoxContainer" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(176, 176)
+layout_mode = 2
+
+[node name="Axe" parent="CenterContainer/GridContainer/Item3" instance=ExtResource("1_18mc6")]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+texture_normal = ExtResource("3_n8fug")
+label = "AXE"

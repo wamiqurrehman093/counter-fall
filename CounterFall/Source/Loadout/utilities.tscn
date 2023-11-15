@@ -1,0 +1,180 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxvutfi8epnxn"]
+
+[ext_resource type="PackedScene" uid="uid://klvwn3o5y5jb" path="res://Source/UserInterface/Buttons/large_icon_button.tscn" id="1_vfe1y"]
+[ext_resource type="Texture2D" uid="uid://dry5w3shk5p41" path="res://Assets/Graphics/Icons/Rifles/Rifle_Base.png" id="2_vfywe"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mpkw1"]
+font_size = 48
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_n0otg"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[node name="Utilities" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="Header"]
+custom_minimum_size = Vector2(120, 48)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 24
+text = "BACK"
+
+[node name="MarginContainer" type="MarginContainer" parent="Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 112
+
+[node name="Heading" type="Label" parent="Header/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "UTILITIES"
+label_settings = SubResource("LabelSettings_mpkw1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="WeaponsList" type="HBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 32
+
+[node name="Headings" type="VBoxContainer" parent="CenterContainer/WeaponsList"]
+custom_minimum_size = Vector2(224, 0)
+layout_mode = 2
+theme_override_constants/separation = 28
+
+[node name="Nades" type="Label" parent="CenterContainer/WeaponsList/Headings"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 7
+text = "NADES"
+label_settings = SubResource("LabelSettings_n0otg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Equipment" type="Label" parent="CenterContainer/WeaponsList/Headings"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 7
+text = "EQUIPMENT"
+label_settings = SubResource("LabelSettings_n0otg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Potions" type="Label" parent="CenterContainer/WeaponsList/Headings"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 7
+text = "POTIONS"
+label_settings = SubResource("LabelSettings_n0otg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Weapons" type="VBoxContainer" parent="CenterContainer/WeaponsList"]
+layout_mode = 2
+theme_override_constants/separation = 28
+
+[node name="Nades" type="HBoxContainer" parent="CenterContainer/WeaponsList/Weapons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="HeatGrenade" parent="CenterContainer/WeaponsList/Weapons/Nades" instance=ExtResource("1_vfe1y")]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+texture_normal = ExtResource("2_vfywe")
+label = "HEAT GRENADE"
+font_size = 18
+
+[node name="FlashGrenade" parent="CenterContainer/WeaponsList/Weapons/Nades" instance=ExtResource("1_vfe1y")]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+texture_normal = ExtResource("2_vfywe")
+label = "FLASH GRENADE"
+font_size = 18
+
+[node name="SmokeGrenade" parent="CenterContainer/WeaponsList/Weapons/Nades" instance=ExtResource("1_vfe1y")]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+texture_normal = ExtResource("2_vfywe")
+label = "SMOKE GRENADE"
+font_size = 18
+
+[node name="FireGrenade" parent="CenterContainer/WeaponsList/Weapons/Nades" instance=ExtResource("1_vfe1y")]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+texture_normal = ExtResource("2_vfywe")
+label = "FIRE GRENADE"
+font_size = 18
+
+[node name="Equipment" type="HBoxContainer" parent="CenterContainer/WeaponsList/Weapons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="HeadArmour" parent="CenterContainer/WeaponsList/Weapons/Equipment" instance=ExtResource("1_vfe1y")]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+texture_normal = ExtResource("2_vfywe")
+label = "HEAD ARMOUR"
+font_size = 18
+
+[node name="BodyArmour" parent="CenterContainer/WeaponsList/Weapons/Equipment" instance=ExtResource("1_vfe1y")]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+texture_normal = ExtResource("2_vfywe")
+label = "BODY ARMOUR"
+font_size = 18
+
+[node name="DefuseKit" parent="CenterContainer/WeaponsList/Weapons/Equipment" instance=ExtResource("1_vfe1y")]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+texture_normal = ExtResource("2_vfywe")
+label = "DEFUSE KIT"
+font_size = 18
+
+[node name="TeleportationMark" parent="CenterContainer/WeaponsList/Weapons/Equipment" instance=ExtResource("1_vfe1y")]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+texture_normal = ExtResource("2_vfywe")
+label = "TELEPORTATION MARK"
+font_size = 18
+
+[node name="Potions" type="HBoxContainer" parent="CenterContainer/WeaponsList/Weapons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="HealthPotion" parent="CenterContainer/WeaponsList/Weapons/Potions" instance=ExtResource("1_vfe1y")]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+texture_normal = ExtResource("2_vfywe")
+label = "HEALTH POTION"
+font_size = 18
+
+[node name="SpeedPotion" parent="CenterContainer/WeaponsList/Weapons/Potions" instance=ExtResource("1_vfe1y")]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+texture_normal = ExtResource("2_vfywe")
+label = "SPEED POTION"
+font_size = 18
+
+[node name="InvisibilityPotion" parent="CenterContainer/WeaponsList/Weapons/Potions" instance=ExtResource("1_vfe1y")]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+texture_normal = ExtResource("2_vfywe")
+label = "INVISIBILITY POTION"
+font_size = 18

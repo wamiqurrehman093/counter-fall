@@ -1,0 +1,289 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkhw4sg8e7krj"]
+
+[ext_resource type="PackedScene" uid="uid://klvwn3o5y5jb" path="res://Source/UserInterface/Buttons/large_icon_button.tscn" id="1_yebid"]
+[ext_resource type="Texture2D" uid="uid://btxek65vsf6oj" path="res://Assets/Graphics/Icons/Pistols/Pisto_Base.png" id="2_23f58"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mpkw1"]
+font_size = 48
+font_color = Color(0, 0, 0, 1)
+
+[node name="LightWeapons" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="Header"]
+custom_minimum_size = Vector2(120, 48)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 24
+text = "BACK"
+
+[node name="MarginContainer" type="MarginContainer" parent="Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 112
+
+[node name="Heading" type="Label" parent="Header/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "LIGHT WEAPONS"
+label_settings = SubResource("LabelSettings_mpkw1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 5
+
+[node name="Item1" type="VBoxContainer" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="Item2" type="VBoxContainer" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="Item3" type="VBoxContainer" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="Usps" parent="CenterContainer/GridContainer/Item3" instance=ExtResource("1_yebid")]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+texture_normal = ExtResource("2_23f58")
+label = "USP-S"
+
+[node name="Label" parent="CenterContainer/GridContainer/Item3/Usps" index="0"]
+anchors_preset = 10
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_top = -24.0
+offset_bottom = 10.0
+grow_vertical = 1
+
+[node name="Item4" type="VBoxContainer" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="Item5" type="VBoxContainer" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="Item6" type="VBoxContainer" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="Item7" type="VBoxContainer" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="Glock" parent="CenterContainer/GridContainer/Item7" instance=ExtResource("1_yebid")]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+texture_normal = ExtResource("2_23f58")
+label = "GLOCK"
+
+[node name="Label" parent="CenterContainer/GridContainer/Item7/Glock" index="0"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_right = 0.0
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = -17.0
+offset_right = -24.0
+offset_bottom = 17.0
+grow_horizontal = 1
+grow_vertical = 2
+horizontal_alignment = 2
+
+[node name="Item8" type="VBoxContainer" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="Item9" type="VBoxContainer" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="Tec9" parent="CenterContainer/GridContainer/Item9" instance=ExtResource("1_yebid")]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+texture_normal = ExtResource("2_23f58")
+label = "TEC-9"
+
+[node name="Label" parent="CenterContainer/GridContainer/Item9/Tec9" index="0"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 23.0
+offset_top = -17.0
+offset_right = 151.0
+offset_bottom = 17.0
+grow_horizontal = 0
+grow_vertical = 2
+horizontal_alignment = 0
+
+[node name="Item10" type="VBoxContainer" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="Item11" type="VBoxContainer" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="P2000" parent="CenterContainer/GridContainer/Item11" instance=ExtResource("1_yebid")]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+texture_normal = ExtResource("2_23f58")
+label = "P2000"
+
+[node name="Label" parent="CenterContainer/GridContainer/Item11/P2000" index="0"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_right = 0.0
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = -17.0
+offset_right = -24.0
+offset_bottom = 17.0
+grow_horizontal = 1
+grow_vertical = 2
+horizontal_alignment = 2
+
+[node name="Item12" type="VBoxContainer" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="Item13" type="VBoxContainer" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="Item14" type="VBoxContainer" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="Item15" type="VBoxContainer" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="FiveSeven" parent="CenterContainer/GridContainer/Item15" instance=ExtResource("1_yebid")]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+texture_normal = ExtResource("2_23f58")
+label = "FIVE-SEVEN"
+
+[node name="Label" parent="CenterContainer/GridContainer/Item15/FiveSeven" index="0"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 23.0
+offset_top = -17.0
+offset_right = 151.0
+offset_bottom = 17.0
+grow_horizontal = 0
+grow_vertical = 2
+horizontal_alignment = 0
+
+[node name="Item16" type="VBoxContainer" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="Item17" type="VBoxContainer" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="P250" parent="CenterContainer/GridContainer/Item17" instance=ExtResource("1_yebid")]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+texture_normal = ExtResource("2_23f58")
+label = "P250"
+
+[node name="Label" parent="CenterContainer/GridContainer/Item17/P250" index="0"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_right = 0.0
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = -17.0
+offset_right = -24.0
+offset_bottom = 17.0
+grow_horizontal = 1
+grow_vertical = 2
+horizontal_alignment = 2
+
+[node name="Item18" type="VBoxContainer" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="Item19" type="VBoxContainer" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="Revolver" parent="CenterContainer/GridContainer/Item19" instance=ExtResource("1_yebid")]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+texture_normal = ExtResource("2_23f58")
+label = "REVOLVER"
+
+[node name="Label" parent="CenterContainer/GridContainer/Item19/Revolver" index="0"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 23.0
+offset_top = -17.0
+offset_right = 151.0
+offset_bottom = 17.0
+grow_horizontal = 0
+grow_vertical = 2
+horizontal_alignment = 0
+
+[node name="Item20" type="VBoxContainer" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="Item21" type="VBoxContainer" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="Item22" type="VBoxContainer" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="Item23" type="VBoxContainer" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="Deagle" parent="CenterContainer/GridContainer/Item23" instance=ExtResource("1_yebid")]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+texture_normal = ExtResource("2_23f58")
+label = "DEAGLE"
+
+[node name="Item24" type="VBoxContainer" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[node name="Item25" type="VBoxContainer" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 2
+
+[editable path="CenterContainer/GridContainer/Item3/Usps"]
+[editable path="CenterContainer/GridContainer/Item7/Glock"]
+[editable path="CenterContainer/GridContainer/Item9/Tec9"]
+[editable path="CenterContainer/GridContainer/Item11/P2000"]
+[editable path="CenterContainer/GridContainer/Item15/FiveSeven"]
+[editable path="CenterContainer/GridContainer/Item17/P250"]
+[editable path="CenterContainer/GridContainer/Item19/Revolver"]

@@ -12,6 +12,7 @@ func _ready():
 	self_modulate = normal_colour
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
+	$Label.pivot_offset = $Label.size / 2
 
 func _on_mouse_entered():
 	self_modulate = hover_colour
